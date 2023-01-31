@@ -1,8 +1,11 @@
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = harl
+NAME = phonebook
 
-SRC = main.cpp harl.cpp 
+SRC = main.cpp \
+		Contact.cpp \
+		Phonebook.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
