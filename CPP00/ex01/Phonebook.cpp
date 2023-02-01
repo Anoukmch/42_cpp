@@ -3,13 +3,31 @@
 // Protect getline !
 // Check color in Weapon attack (how to do bold ?)
 
-// Constructors 
-PhoneBook::PhoneBook() { }
+// Constructors
+Phonebook::Phonebook() { }
 
-// Destructor 
-PhoneBook::~PhoneBook() { }
+// Destructor
+Phonebook::~Phonebook() { }
 
-void PhoneBook::add(void) { 
+void Phonebook::GetInput(std::string) {
+
+}
+
+void Phonebook::IncrementIndex() {
+	_index++;
+	if (_index > 7)
+		_index = 0;
+}
+
+void Phonebook::Add(void) {
+	std::string input;
+
+	IncrementIndex();
+
+	input = GetInput("1. First name: ");
+	
+
+
 	std::cout << "1. First name: ";
 	std::getline (std::cin,input);
 	std::cout << "2. Last name: ";
@@ -24,7 +42,10 @@ void PhoneBook::add(void) {
 
 }
 
-// Recupérer l'index du contact
+/* Objectif : add a contact to the directory
 
+Keep count on contact's index so we know if we have more than 8
+Fill in everything for one contact (asking the cin)
+*/
 
-void PhoneBook::search(void) { }
+void Phonebook::search(void) { }

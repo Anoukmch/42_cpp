@@ -5,16 +5,17 @@
 
 #include "Contact.hpp"
 
-class PhoneBook
+class Phonebook
 {
 	public:
-		PhoneBook();
-		~PhoneBook();
+		Phonebook();
+		~Phonebook();
 		void add();
 		void search();
 
     private:
-       Contact contacts[8];
+       Contact _directory[8];
+	   int		_index;
 };
 
 #endif
