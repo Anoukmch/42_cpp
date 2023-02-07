@@ -9,7 +9,7 @@ Phonebook::Phonebook() { }
 // Destructor
 Phonebook::~Phonebook() { }
 
-void Phonebook::GetInput(std::string str) {
+void Phonebook::getInput(std::string str) {
 	std::string input;
 
 	while (!input)
@@ -20,27 +20,27 @@ void Phonebook::GetInput(std::string str) {
 	return (input);	
 }
 
-void Phonebook::IncrementIndex() {
+void Phonebook::incrementIndex() {
 	_index++;
 	if (_index > 7)
 		_index = 0;
 }
 
-void Phonebook::Add(void) {
+void Phonebook::add(void) {
 	std::string input;
 
-	IncrementIndex();
+	incrementIndex();
 	std::cout << "-       ADD MENU :       -" << std::endl;
 	std::cout << "-     Please fill in     -" << std::endl;
-	input = GetInput("1. First name: ");
+	input = getInput("1. First name: ");
 	_directory[_index].setFname(input);
-	input = GetInput("2. Last name: ");
+	input = getInput("2. Last name: ");
 	_directory[_index].setLname(input);
-	input = GetInput("3. Nickname: ");
+	input = getInput("3. Nickname: ");
 	_directory[_index].setNname(input);
-	input = GetInput("4. Phone number: ");
+	input = getInput("4. Phone number: ");
 	_directory[_index].setNbr(input);
-	input = GetInput("5. Darkest secret: ");
+	input = getInput("5. Darkest secret: ");
 	_directory[_index].setSecret(input);
 	std::cout << "Contact successfully saved" << std::endl;
 
@@ -51,13 +51,22 @@ void Phonebook::displayTable(void) {
 	<< "|  INDEX   |FIRST NAME| LAST NAME| NICKNAME |" << std::endl
 	<< "+----------+----------+----------+----------+" << std::endl;
 
-	for (i = 0 ; i < 8 ; i++)
+	for (i = 0 ; i < 8 ; i++) // if less than 8 contacts ? 
 	{
 		std::cout << "|" << std::setw(10) << i << "|";
+		std::cout << "|" << std::setw(10) << _directory[_index].getFname() << "|";
+		std::cout << "|" << std::setw(10) << _directory[_index].getLname() << "|";
+		std::cout << "|" << std::setw(10) << _directory[_index].getNname() << "|";
 	}
+	std::cout << std::endl << "+----------+----------+----------+----------+" << std::endl;
 }
 
-void Phonebook::Search(void) { 
+void Phonebook::displayContact(void) {
+
+}
+
+void Phonebook::search(void) { 
+	std::string input;
 
 	std::cout << "-       SEARCH MENU :       -" << std::endl;
 	if (_index == -1) {
@@ -65,4 +74,6 @@ void Phonebook::Search(void) {
 		return ;
 	}
 	displayTable();
+	input = getInput("the contact's index to display");
+	displayContact();
 }

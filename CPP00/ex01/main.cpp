@@ -35,3 +35,4 @@ int	main()
 }
 
 // try to use reference constant whenever it is possible
+// Check how to use an operator to avoir using a getters (in weapon exercise)
