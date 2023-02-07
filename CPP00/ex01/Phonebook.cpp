@@ -9,8 +9,15 @@ Phonebook::Phonebook() { }
 // Destructor
 Phonebook::~Phonebook() { }
 
-void Phonebook::GetInput(std::string) {
+void Phonebook::GetInput(std::string str) {
+	std::string input;
 
+	while (!input)
+	{
+		std::cout << "Please enter: " << string << std::endl;
+		std::getline (std::cin,input);
+	}
+	return (input);	
 }
 
 void Phonebook::IncrementIndex() {
@@ -23,29 +30,39 @@ void Phonebook::Add(void) {
 	std::string input;
 
 	IncrementIndex();
-
+	std::cout << "-       ADD MENU :       -" << std::endl;
+	std::cout << "-     Please fill in     -" << std::endl;
 	input = GetInput("1. First name: ");
-	
-
-
-	std::cout << "1. First name: ";
-	std::getline (std::cin,input);
-	std::cout << "2. Last name: ";
-	std::getline (std::cin,input);
-	std::cout << "3. Nickname: ";
-	std::getline (std::cin,input);
-	std::cout << "4. Phone number: ";
-	std::getline (std::cin,input);
-	std::cout << "5. Darkest secret: ";
-	std::getline (std::cin,input);
-
+	_directory[_index].setFname(input);
+	input = GetInput("2. Last name: ");
+	_directory[_index].setLname(input);
+	input = GetInput("3. Nickname: ");
+	_directory[_index].setNname(input);
+	input = GetInput("4. Phone number: ");
+	_directory[_index].setNbr(input);
+	input = GetInput("5. Darkest secret: ");
+	_directory[_index].setSecret(input);
+	std::cout << "Contact successfully saved" << std::endl;
 
 }
 
-/* Objectif : add a contact to the directory
+void Phonebook::displayTable(void) {
+	std::cout << "+----------+----------+----------+----------+" << std::endl
+	<< "|  INDEX   |FIRST NAME| LAST NAME| NICKNAME |" << std::endl
+	<< "+----------+----------+----------+----------+" << std::endl;
 
-Keep count on contact's index so we know if we have more than 8
-Fill in everything for one contact (asking the cin)
-*/
+	for (i = 0 ; i < 8 ; i++)
+	{
+		std::cout << "|" << std::setw(10) << i << "|";
+	}
+}
 
-void Phonebook::search(void) { }
+void Phonebook::Search(void) { 
+
+	std::cout << "-       SEARCH MENU :       -" << std::endl;
+	if (_index == -1) {
+		std::cout << "Phonebook is empty." << std::endl;
+		return ;
+	}
+	displayTable();
+}

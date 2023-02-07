@@ -10,8 +10,8 @@ class Phonebook
 	public:
 		Phonebook();
 		~Phonebook();
-		void add();
-		void search();
+		void Add();
+		void Search();
 
     private:
        Contact _directory[8];

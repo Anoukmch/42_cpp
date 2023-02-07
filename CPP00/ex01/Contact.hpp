@@ -8,20 +8,22 @@ class Contact
 	public:
 		Contact();
 		~Contact();
-		std::string setFname();
-		std::string setLname();
-		std::string setNname();
-		std::string setNbr();
-		std::string setSecret();
+		void setFname(std::string str);
+		void setLname(std::string str);
+		void setNname(std::string str);
+		void setNbr(std::string str);
+		void setSecret(std::string str);
 
     private:
-       std::string m_fName;
-	   std::string m_lName;
-	   std::string m_nMame;
-	   std::string m_number;
-	   std::string m_secret;
+       std::string _Fname;
+	   std::string _Lname;
+	   std::string _Nname;
+	   std::string _Nbr;
+	   std::string _Secret;
 };
-
+ 
 #endif
 
-// Constructeur surchargé avec les infos envoyés
+// Check empty param 
+// Display contact 
+// Contains only alpha or digits 
