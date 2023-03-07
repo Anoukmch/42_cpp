@@ -2,37 +2,30 @@
 
 int	main()
 {
-	std::cout << "Welcome to The Awesome Crappy Phonebook" << std::endl;
+	Phonebook pBook;
+	std::string input;
+	
+	std::cout << "\nWelcome to The Awesome Crappy Phonebook\n\n";
 	while (true)
 	{
-		Phonebook pBook;
-		std::string input;
+		std::cout << "-        MAIN MENU       -" << std::endl;
+		std::cout << "  What can I do for you ?  \n\n";
+		std::cout << "  > ADD" << std::endl;
+		std::cout << "  > SEARCH" << std::endl;
+		std::cout << "  > EXIT\n\n";
 
-		std::cout << "-       MAIN MENU :       -" << std::endl;
-		std::cout << "- What can I do for you ? -" << std::endl;
-		std::cout << ". ADD" << std::endl;
-		std::cout << ". SEARCH" << std::endl;
-		std::cout << ". EXIT" << std::endl;
-
-		std::cout << "> ";
-		std::getline (std::cin,input);
-		std::cout << input << std::endl;
+		input = pBook.getInput("> ", -1);
 		if (input == "ADD")
-			pBook.Add();
+			pBook.add();
 		else if (input == "SEARCH")
-			pBook.Search();
-		else if (input == "EXIT")
-			break ; 
-		else 
-		{
-			std::cout << "- Please enter a valid command: -" << std::endl << std::endl;
-			std::cout << "- . ADD                    -" << std::endl;
-			std::cout << "- . SEARCH                 -" << std::endl;
-			std::cout << "- . EXIT                   -" << std::endl;
+			pBook.search();
+		else if (input == "EXIT") {
+			std::cout << "Goodbye" << std::endl;
+			return (1); 
+		}
+		else {
+			std::cout << "Please enter a valid command " << std::endl << std::endl;
 		}
 	}
 	return (0);
 }
-
-// try to use reference constant whenever it is possible
-// Check how to use an operator to avoir using a getters (in weapon exercise)

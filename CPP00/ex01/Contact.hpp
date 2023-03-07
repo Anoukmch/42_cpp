@@ -2,17 +2,23 @@
 #define CONTACT_H
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact
 {
 	public:
 		Contact();
 		~Contact();
-		void setFname(std::string str);
-		void setLname(std::string str);
-		void setNname(std::string str);
-		void setNbr(std::string str);
-		void setSecret(std::string str);
+		void setFname(std::string const str);
+		void setLname(std::string const str);
+		void setNname(std::string const str);
+		void setNbr(std::string const str);
+		void setSecret(std::string const str);
+		std::string const getFname(void) const;
+		std::string const getLname(void) const;
+		std::string const getNname(void) const;
+		std::string const getNbr(void) const;
+		std::string const getSecret(void) const;
 
     private:
        std::string _Fname;
@@ -23,7 +29,3 @@ class Contact
 };
  
 #endif
-
-// Check empty param 
-// Display contact 
-// Contains only alpha or digits 
