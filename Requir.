@@ -1,0 +1,76 @@
+CPP
+
+-MMD -MP (compiling in Makefile)
+
+TO DO :
+- Forme canonique (is it necessary to have getters and setters ?)
+- Operateur+
+- Verifier nomenclature des classes
+- Verifier requirements & leaks
+- Using namespace <> and friend —> what is it?
+- How to delete/store object file
+- Why some functions need to be private ? Some public ?
+- Print a string to see how to dereference
+- If I declare a variable but not in the header (attribute/data members), does it refers also as data members ? Can it also be considered for a method that is const and that cannot modify its data members ?
+- Peut on envoyer une reference sur une string ?
+- Write main for all exercises
+- What is a template ?
+- Learn iterators
+- Static and const, difference ? When/why to use static ?
+- How can I call a constructor copy with an overload ?
+- Polymorphism : is it necessary that the destructors of daughters classe are also virtual or only the parent’s class ?
+- Do I need to use this when I use the attribute of the class ?
+- Lorsqu’on manipule les attributs d’une classe fille, comment se rappeler d’initialiser/d’utiliser aussi les attributs de la classe mere ?
+
+PUT ALL VARIABLES/FUNCTIONS/METHODS CONSTANT WHEN POSSIBLE
+
+https://hackr.io/blog/stack-vs-heap
+
+Files handling : https://www.w3schools.com/cpp/cpp_files.asp
+
+Why do I need getters and setters in a method if I can access attribute from an other object that is same class ?
+Why put the attribute private if we have setters ?
+
+Do I need to necessarily add the constructor() —> sans aucun paramètres envoyes ? In canonical form, yes.
+Comment initialiser les paramètres par défaut sinon (dans le cas ou on initialise pas en envoyant une valeur dans le main) ?
+Si j’ai un attribut qui est un objet vers une autre classe, et que je n’initialise pas mon attribut dans le constructeur de ma classe, un constructeur est appelé vers cette autre classe, pourquoi est-ce le constructeur par default ? Et puis-je appeler un constructeur surcharge via cet attribut, depuis cette classe ?
+
+Initialiser les arguments (dans le constructeur) dans le meme ordre que dans la definition de la classe.
+
+Reference équivaut a un alias. Si je la change en cours de route, je perds l’alias de la premiere valeur et je le remplace par une autre.
+Si je dis
+Int a;
+Int b;
+Ref = &a;
+
+Ref = b —> cette ligne équivaut a a = b.
+Maintenant a vaut b. Donc je perds la premiere valeur de a.
+
+If we want to create a reference of smgt that is const, then the reference has to be constant as well. Otherwise it means we are creating an alias of smgt const, allowing this alias not to be const, thus being able to modify it (and it HAS to be const)
+String = string const
+String& != string const
+Je dis a = constante. Donc a, c’est mon problème maintenant si je veux que ce ne soit pas constant ou pas car c’est une copie de constante.
+Or si je dis & a = constante, je lis a et constante. Ils deviennent la meme personne. Donc a se doit d’être exactement comme constante.
+
+Si je dereference un pointer vers une classe, j’accede a toute la classe (exemple, les strucutures). Si j’utilise *pointer, ca ne peut pas marcher, il faut utiliser “->”. Si ca marche (ex pour print), c’est que la fonction d’opérateur de print a été établie de cette façon.
+
+- Methode d’opérateurs
+- Test portabilité (envoi de reference et pointeur de fonction en fonction)
+- How to check memory leaks ?
+
+In operator, don’t forget to reallocate the pointer bc otherwise it’s shallow copy
+
+String is not a POINTER so it is not necessary to initialize a string to NULL.
+If a string is an attribute ,it is automatically constructs as an empty string with a length of zero characters, by the default constructor (so, no need to write anything).
+- How to initialize a non pointer (object of a class) to something non existant ?
+
+A pointer is NOT an object. We can write :
+Class *ptr;
+ptr(NULL) <=> ptr = NULL
+
+But we can’t write :
+Class obj;
+Obj(param) !<=> obj = param
+
+The VIRTUAL keywords permet de rendre une méthode polymorphique c’est-a-dire de pouvoir la redéfinir sous le meme nom dans la classe fille et de l’utiliser un peu comme on veut entre mere et fille.
+Le polymorphisme permet de manipuler des objets d'une classe fille via des pointeurs ou des références sur une classe mère
