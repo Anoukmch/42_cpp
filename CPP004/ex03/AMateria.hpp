@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 10:02:44 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/04/03 21:03:31 by anoukmechai      ###   ########.fr       */
+/*   Created: 2023/04/03 12:13:10 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/04/03 18:00:18 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAP_TRAP_H
-#define CLAP_TRAP_H
+#ifndef AMATERIA_H
+#define AMATERIA_H
 
 # include <iostream>
 
-class ClapTrap
+class AMateria
 {
 	public :
-		ClapTrap();
-		ClapTrap( ClapTrap const & src);
-		ClapTrap &operator=( ClapTrap const & src);
-		ClapTrap(std::string name);
-		~ClapTrap( void );
-		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		AMateria();
+		AMateria( AMateria const & src);
+		AMateria(std::string const & type);
+		AMateria &operator=( AMateria const & src);
+		virtual ~AMateria( void );
 
-	private :
-		std::string _name;
-		int _hit;
-		int _energy;
-		int _damage;
+		std::string const & getType() const; //Returns the materia type
+		//virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+
+	protected :
+		std::string _type;
 };
 
 #endif

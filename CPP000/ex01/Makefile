@@ -2,7 +2,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = phonebook
 
-SRC = main.cpp \
+SRC = 	main.cpp \
 		Contact.cpp \
 		Phonebook.cpp
 
@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 	c++ -o $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ)b 
 
 fclean: clean
 	rm -f $(NAME)

@@ -1,5 +1,5 @@
 # Program name
-NAME	= fragtrap
+NAME	= ex02
 
 # Compiler
 CC		= c++

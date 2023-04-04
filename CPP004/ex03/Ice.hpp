@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 10:02:44 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/04/03 21:03:31 by anoukmechai      ###   ########.fr       */
+/*   Created: 2023/04/03 12:13:32 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/04/03 15:41:21 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAP_TRAP_H
-#define CLAP_TRAP_H
+#ifndef ICE_H
+#define ICE_H
 
 # include <iostream>
+# include "AMateria.hpp"
 
-class ClapTrap
+class Ice : public AMateria
 {
 	public :
-		ClapTrap();
-		ClapTrap( ClapTrap const & src);
-		ClapTrap &operator=( ClapTrap const & src);
-		ClapTrap(std::string name);
-		~ClapTrap( void );
+		Ice();
+		Ice( Ice const & src);
+		Ice &operator=( Ice const & src);
+		~Ice( void );
 		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		AMateria* clone() const;
 
-	private :
-		std::string _name;
-		int _hit;
-		int _energy;
-		int _damage;
 };
 
 #endif

@@ -1,5 +1,5 @@
 # Program name
-NAME	= scravtrap
+NAME	= ex01
 
 # Compiler
 CC		= c++

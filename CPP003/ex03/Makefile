@@ -1,5 +1,5 @@
 # Program name
-NAME	= diamondtrap
+NAME	= ex03
 
 # Compiler
 CC		= c++

@@ -1,5 +1,5 @@
 # Program name
-NAME	= claptrap
+NAME	= ex00
 
 # Compiler
 CC		= c++

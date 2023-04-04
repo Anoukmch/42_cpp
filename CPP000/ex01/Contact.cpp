@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 18:25:00 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/04/03 18:30:38 by anoukmechai      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 // Constructors 
@@ -5,8 +17,6 @@ Contact::Contact() { }
 
 // Destructor 
 Contact::~Contact() { }
-
-// Member functions
 
 // Getters 
 std::string const Contact::getFname(void) const { return (_Fname); }

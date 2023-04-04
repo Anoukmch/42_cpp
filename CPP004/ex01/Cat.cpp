@@ -18,10 +18,7 @@ Cat::Cat() : Animal(), _brain(new Brain()) {
 	_type = "Cat";
 }
 
-m_arme = new Arme();
-m_arme = new Arme(*(personnageACopier.m_arme));
-
-Cat::Cat( Cat const & src) : Animal() {
+Cat::Cat( Cat const & src) : Animal() { // missing pointer 
 	std::cout << "Cat Copy constructed called" << std::endl;
 	*this = src;
 }

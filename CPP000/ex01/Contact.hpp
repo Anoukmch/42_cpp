@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 18:24:57 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/04/03 18:45:02 by anoukmechai      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_H
 #define CONTACT_H
+
 #include <iostream>
 #include <string>
 #include <iomanip>

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 19:44:49 by amechain          #+#    #+#              #
-#    Updated: 2023/03/14 12:40:31 by amechain         ###   ########.fr        #
+#    Updated: 2023/04/03 20:30:30 by anoukmechai      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME =  Fixed0
+NAME =  ex00
 
 M_SRC = main.cpp \
 		Fixed.cpp

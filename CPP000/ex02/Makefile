@@ -6,7 +6,9 @@ CC		= c++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
 # Files
-SRCS	= Account.cpp tests.cpp
+SRCS	= 	Account.cpp \
+			test.cpp
+			
 OBJS	= $(SRCS:.cpp=.o)
 INC		= -I ./
 

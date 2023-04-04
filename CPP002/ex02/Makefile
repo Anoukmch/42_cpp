@@ -1,34 +1,40 @@
-# Program name
-NAME	= Fixed2
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/13 19:44:49 by amechain          #+#    #+#              #
+#    Updated: 2023/04/03 20:31:41 by anoukmechai      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Compiler
-CC		= c++
-CFLAGS	= -Werror -Wextra -Wall -std=c++98
+CC = c++
 
-# Files
-SRCS	= main.cpp Fixed.cpp
-OBJS	= $(SRCS:.cpp=.o)
-INC		= -I ./
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-# Build rule
+NAME =  ex02
+
+M_SRC = main.cpp \
+		Fixed.cpp
+
+M_OBJS = $(M_SRC:.cpp=.o)
+
 all: $(NAME)
 
+$(NAME): $(M_OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
+
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
-
-# Program build rule
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC)
-
-# Clean rules
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	@rm -f $(M_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
-# Remake
 re: fclean all
 
-.PHONY: all re clean fclean
+.PHONY: all clean fclean re

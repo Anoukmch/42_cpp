@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 18:24:41 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/04/03 18:25:16 by anoukmechai      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 
 // Constructors
@@ -33,7 +45,7 @@ std::string Phonebook::getInput(std::string const& str, int const& code) {
 	while (true) 
 	{
 		std::cout << str;
-		if (!std::getline(std::cin,input) || std::cin.eof()) { // Ask for difference 
+		if (!std::getline(std::cin,input) || std::cin.eof()) { 
 			std::cout << "Goodbye" << std::endl;
 			exit(0);
 		}
