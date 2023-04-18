@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:43:10 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/23 16:48:53 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:00:21 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	_damage = 20;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap() { // Am I creating a default Claptrap or a named claptrap ?
+ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap(src) {
 	std::cout << "ScavTrap Copy Constructed Called" << std::endl;
 	*this = src;
 }
@@ -34,7 +34,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 
 // Destructors
 ScavTrap::~ScavTrap( void ) {
-	std::cout << "ScavTrap " << _name << " Destructor Called." << std::endl;
+	std::cout << "ScavTrap " << " Destructor Called." << std::endl;
 }
 
 // Operator overload

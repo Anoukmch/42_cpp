@@ -6,7 +6,7 @@
 #    By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:27:44 by jmatheis          #+#    #+#              #
-#    Updated: 2023/01/30 15:37:49 by amechain         ###   ########.fr        #
+#    Updated: 2023/04/04 17:12:16 by amechain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME =  harl
+NAME =  ex05
 
 M_SRC = main.cpp \
 		Harl.cpp

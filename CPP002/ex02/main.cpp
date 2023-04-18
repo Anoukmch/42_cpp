@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:24:41 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/14 18:22:03 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:05:23 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,27 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-
 	Fixed a;
-	Fixed b( 45 );
-	Fixed c;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	c = b;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
+	std::cout << "My own test : " << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
+	std::cout << a + b << std::endl;
+	std::cout << a - b << std::endl;
+	std::cout << a / b << std::endl;
+	std::cout << a * b << std::endl;
 	return 0;
 }

@@ -31,7 +31,7 @@ WrongAnimal::~WrongAnimal( void ) {
 WrongAnimal & WrongAnimal::operator=( WrongAnimal const & src) {
 	std::cout << "WrongAnimal Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type;
+		_type = src.getType();
 	}
 	return ( *this );
 }

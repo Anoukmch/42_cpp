@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 11:34:58 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/05 11:56:40 by amechain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string.h>
 
@@ -7,10 +19,10 @@
 int main()
 {
 	{
-		Weapon club = Weapon("tranchant"); // Weapon
-		HumanA bob("Bob", club); // Bob constructor (function) create a copy of Weapon
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
 		bob.attack();
-		club.setType("some other type of club"); // To automatically update "bob", we need to have a reference towards "club"
+		club.setType("some other type of club");
 		bob.attack();
 	}
 	{
@@ -22,5 +34,7 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	std::cout << std::endl;
+	system("leaks ex03");
 	return 0;
 }

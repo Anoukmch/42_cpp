@@ -6,7 +6,7 @@
 #    By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:27:44 by jmatheis          #+#    #+#              #
-#    Updated: 2023/01/30 14:37:47 by amechain         ###   ########.fr        #
+#    Updated: 2023/04/04 17:12:10 by amechain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME =  sed
+NAME =  ex04
 
 M_SRC = main.cpp
 

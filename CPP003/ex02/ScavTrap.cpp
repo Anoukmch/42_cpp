@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:43:10 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/23 16:48:17 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:34:14 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap() : ClapTrap() {
 	_damage = 20;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap() {
+ScavTrap::ScavTrap( ScavTrap const & src) : ClapTrap(src) {
 	std::cout << "ScavTrap Copy Constructed Called" << std::endl;
 	*this = src;
 }

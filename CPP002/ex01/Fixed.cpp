@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 15:10:37 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/06 13:47:45 by amechain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 // Constructors
@@ -25,28 +37,26 @@ Fixed::~Fixed(void) {
 
 // Members Functions
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
-	return (_fixPt);
+	return (this->_fixPt);
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << "setRawBits member function called" << std::endl;
-	_fixPt = raw;
+	this->_fixPt = raw;
 }
 
 float Fixed::toFloat( void ) const {
-	return ( (float)_fixPt / (1 << _fracBits));
+	return ( (float)this->_fixPt / (1 << this->_fracBits));
 }
 
 int Fixed::toInt( void ) const {
-	return ( _fixPt >> _fracBits);
+	return ( this->_fixPt >> this->_fracBits);
 }
 
 // Operator overload
 Fixed& Fixed::operator=(const Fixed & var) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &var)
-		_fixPt = var.getRawBits();
+		this->_fixPt = var.getRawBits();
 	return (*this);
 }
 
@@ -54,5 +64,3 @@ std::ostream &operator<<( std::ostream &flux, Fixed const& var) {
 	flux << var.toFloat();
 	return ( flux );
 }
-
-// in operator=, why not -> *this = var ? 

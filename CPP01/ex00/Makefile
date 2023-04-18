@@ -6,7 +6,7 @@
 #    By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:27:44 by jmatheis          #+#    #+#              #
-#    Updated: 2023/01/15 16:41:05 by amechain         ###   ########.fr        #
+#    Updated: 2023/04/04 17:35:07 by amechain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME =  brainz
+NAME =  ex00
 
-M_SRC = main.cpp
+M_SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 M_OBJS = $(M_SRC:.cpp=.o)
 

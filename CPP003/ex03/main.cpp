@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:22:34 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/22 14:44:12 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:01:12 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,61 +14,45 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "DiamondTrap.hpp"
-#include <string>
 
 int	main(void) {
 
-	DiamondTrap	*DT0;
+DiamondTrap	test;
+	DiamondTrap	*DT;
+	ScavTrap	*ST;
+	FragTrap	*FT;
+	ClapTrap	*CT;
 
-	ScavTrap	*ST0;
-	ScavTrap	*ST1;
-
-	FragTrap	*FT0;
-	FragTrap	*FT1;
-
-	ClapTrap	*CT0;
-	ClapTrap	*CT1;
-	ClapTrap	*CT2;
-	ClapTrap	*CT3;
-
-	DT0 = new DiamondTrap;
+	DT = new DiamondTrap("Diamond");
 	std::cout << "\n";
-	ST0 = new DiamondTrap;
+	ST = new ScavTrap("Scavy");
 	std::cout << "\n";
-	ST1 = new ScavTrap;
+	FT = new FragTrap("Fragy");
 	std::cout << "\n";
-	FT0 = new DiamondTrap;
-	std::cout << "\n";
-	FT1 = new FragTrap;
-	std::cout << "\n";
-	CT0 = new DiamondTrap;
-	std::cout << "\n";
-	CT1 = new ScavTrap;
-	std::cout << "\n";
-	CT2 = new FragTrap;
-	std::cout << "\n";
-	CT3 = new ClapTrap;
+	CT = new ClapTrap("Clapy4");
 	std::cout << "\n";
 
-	DT0->attack("DT0");
-	ST0->attack("ST0");
-	ST1->attack("ST1");
-	FT0->attack("FT0");
-	FT1->attack("FT1");
-	CT0->attack("CT0");
-	CT1->attack("CT1");
-	CT2->attack("CT2");
-	CT3->attack("CT3");
+	DT->attack("DT0");
+	ST->attack("ST0");
+	FT->attack("ST1");
+	CT->attack("FT0");
 
-	DT0->guardGate();
-	ST0->guardGate();
-	ST1->guardGate();
+	//DT->guardGate();
+	ST->guardGate();
 
-	DT0->highFivesGuys();
-	FT0->highFivesGuys();
-	FT1->highFivesGuys();
+	DT->highFivesGuys();
+	FT->highFivesGuys();
 
-	DT0->whoAmI(); // OK
-
+	DT->whoAmI();
+	DT->test();
+	std::cout << "\n";
+	delete DT;
+	std::cout << "\n";
+	delete ST;
+	std::cout << "\n";
+	delete FT;
+	std::cout << "\n";
+	delete CT;
+	std::cout << "\n";
 	return (0);
 }

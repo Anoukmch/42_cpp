@@ -1,14 +1,32 @@
-- Forme canonique 
+- Forme canonique
 - Commentaires
 - memory leaks
-- Header dependency 
+- Header dependency
 - Write main for all exercises
-- PUT ALL VARIABLES/FUNCTIONS/METHODS CONSTANT WHEN POSSIBLE
-
-- check same file in account with specific unix function
-- Compare with evaluation sheet 
+- Compare with evaluation sheet
 - Compare the requirements with pdf (test, etc)
+is there executable name requirements ?
+Add this pointer to attributes
+Check constructor copy
 
+cpp01 : ex03 :
+// if no pointer or reference, _weaponA becomes a copy of weapon, so it is not related to "club" in any way
+// creating a reference means _weaponA is now an alias of weapon
+// sending "club" to HumanA as a reference means weapon is an alias of club
 
+- stack vs heap ?
 
+CPP02 :
+ex00:
+- // in operator=, why not -> *this = var ?
+
+ex02 :
+- // tester *this != src (dans le if) && this = src (dans le corps du if)
+// pq on peut utiliser != alors qu'il est pas implement ?
+// tester this->rax != src.getrawbits (ça ne doit pas marche sans l'opértor implement)
+
+CPP04 :
+// Check order of destructors (brain, cat, animal)
+// Why is it calling the animal destructor all the time ?
+// check which destructors is called when deleting a dog or a cat
 

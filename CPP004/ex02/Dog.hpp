@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 13:55:00 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/21 17:39:14 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:10:49 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_CAT_H
-#define WRONG_CAT_H
+#ifndef DOG_H
+#define DOG_H
 
-#include "WrongAnimal.hpp"
+#include "AAnimal.hpp"
+# include "Brain.hpp"
 # include <iostream>
 
-class WrongCat : public WrongAnimal
+class Dog : public AAnimal
 {
 	public :
-		WrongCat();
-		WrongCat( WrongCat const & src);
-		WrongCat &operator=( WrongCat const & src);
-		~WrongCat();
+		Dog();
+		Dog( Dog const & src);
+		Dog &operator=( Dog const & src);
+		virtual ~Dog();
 
-		void makeSound() const;
+		virtual void makeSound() const;
+		void setIdea(int i, std::string const& idea);
+		std::string const& getIdea(int index) const;
+
+		private :
+			Brain *	_brain;
 };
 
 #endif

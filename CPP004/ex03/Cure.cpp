@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 12:16:28 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/04/03 15:56:58 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/04/07 21:02:37 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 // Constructors
 Cure::Cure() : AMateria("cure") {
-	std::cout << "Animal Default constructor called." << std::endl;
+	std::cout << "Cure Default constructor called." << std::endl;
 }
 
-Cure::Cure( Cure const & src) : AMateria("cure") {
+Cure::Cure( Cure const & src) : AMateria(src) {
 	std::cout << "Cure Copy constructed called" << std::endl;
 	*this = src;
 }
@@ -31,12 +31,16 @@ Cure::~Cure( void ) {
 Cure & Cure::operator=( Cure const & src) {
 	std::cout << "Cure Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type; // REMOVE ? 
+		_type = src._type;
 	}
 	return ( *this );
 }
 
-// Member function 
-AMateria* Cure::clone() const { // should I return AMateria or Cure ? 
+// Member function
+AMateria* Cure::clone() const {
 	return (new Cure());
+}
+
+void Cure::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << " 's wounds *" << std::endl;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 12:55:48 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/05 12:55:49 by amechain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 // Constructors
@@ -30,7 +42,7 @@ void Harl::complain(std::string level) {
             return ;
         }
     }
-    std::cout << "wrong message specified" << std::endl;
+    std::cout << "Wrong complaint code specified" << std::endl;
 }
 
 // Member functions - private

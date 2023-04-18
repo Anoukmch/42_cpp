@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 12:54:33 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/05 12:55:01 by amechain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 // Constructors
@@ -6,7 +18,7 @@ Harl::Harl() { }
 // Destructor
 Harl::~Harl() { }
 
-// Member functions
+// Member functions - public
 
 void Harl::complain(std::string level) {
 	    void (Harl::*fptr[]) (void) = {

@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 13:56:38 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/23 16:47:54 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:44:07 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ Animal::Animal( Animal const & src) {
 // Destructors
 Animal::~Animal( void ) {
 	std::cout << "Animal Destructor called." << std::endl;
-} // check which destructors is called when deleting a dog or a cat
+}
 
 // Operator overload
 Animal & Animal::operator=( Animal const & src) {
 	std::cout << "Animal Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type;
+		_type = src.getType();
 	}
 	return ( *this );
 }

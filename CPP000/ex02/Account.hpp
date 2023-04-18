@@ -12,8 +12,6 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
-#include <iostream>
-
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
@@ -39,16 +37,15 @@ public:
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
 
-	static int	_totalNbDeposits;
-
 
 private:
 
 	static int	_nbAccounts;
 	static int	_totalAmount;
+	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
-	//static void	_displayTimestamp( void );
+	static void	_displayTimestamp( void );
 
 	int				_accountIndex;
 	int				_amount;

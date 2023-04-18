@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 12:16:24 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/04/03 15:56:44 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/04/07 18:17:52 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ AMateria::~AMateria( void ) {
 AMateria & AMateria::operator=( AMateria const & src) {
 	std::cout << "AMateria Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type; // REMOVE ? 
+		_type = src._type;
 	}
 	return ( *this );
 }
 
-// Member function 
+// Member function
 std::string const & AMateria::getType() const {
 	return (_type);
 }
 
 void AMateria::use(ICharacter& target) {
-	
+	std::cout << "Undefined Materia do undefined stuffs at : " << target.getName() << std::endl;
 }

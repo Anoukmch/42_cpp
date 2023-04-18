@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:46:42 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/03 21:02:53 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/04/05 16:17:40 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(Fixed const& copy);
-		Fixed(const int integer); // Fixed const b in PDF ??
+		Fixed(const int integer);
 		Fixed(const float fPoint);
 		~Fixed();
-
 		Fixed & operator=(const Fixed & var);
+
 		int getRawBits( void ) const;
 		void setRawBits(int const raw);
-
 		float toFloat( void ) const;
 		int toInt( void ) const;
 

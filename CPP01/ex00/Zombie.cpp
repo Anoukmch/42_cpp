@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 16:58:58 by amechain          #+#    #+#             */
-/*   Updated: 2023/01/15 19:38:55 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:36:02 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ Zombie::~Zombie()
 
 void Zombie::announce(void)
 {
-	std::cout << _name << "BraiiiiiiinnnzzzZ...\n";
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
 }

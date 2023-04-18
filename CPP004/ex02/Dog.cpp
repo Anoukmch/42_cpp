@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,34 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongCat.hpp"
+#include "Dog.hpp"
 
 // Constructors
-WrongCat::WrongCat() : WrongAnimal() {
-	_type = "WrongCat";
-	std::cout << "WrongCat Default constructor called." << std::endl;
+Dog::Dog() : AAnimal(), _brain(new Brain()) {
+	std::cout << "Dog Default constructor called." << std::endl;
+	_type = "Dog";
 }
 
-WrongCat::WrongCat( WrongCat const & src) : WrongAnimal() {
-	std::cout << "WrongCat Copy constructed called" << std::endl;
+Dog::Dog( Dog const & src) : AAnimal(src), _brain(NULL) {
+	std::cout << "Dog Copy constructed called" << std::endl;
 	*this = src;
 }
 
 // Destructors
-WrongCat::~WrongCat( void ) {
-	std::cout << "WrongCat Destructor called." << std::endl;
+Dog::~Dog( void ) {
+	std::cout << "Dog Destructor called." << std::endl;
+	delete _brain;
 }
 
 // Operator overload
-WrongCat & WrongCat::operator=( WrongCat const & src) {
-	std::cout << "WrongCat Copy assignment operator called" << std::endl;
+Dog & Dog::operator=( Dog const & src) {
+	std::cout << "Dog Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type;
+		_type = src.getType();
+		if (_brain != NULL)
+			delete _brain;
+		_brain = new Brain(*src._brain);
 	}
 	return ( *this );
 }
 
 // Member functions
-void WrongCat::makeSound() const {
-	std::cout << _type << " : wrong Miaou Miaou" << std::endl;
+void Dog::makeSound() const {
+	std::cout << _type << " : Wouf Wouf" << std::endl;
 }
+
+// Setter
+void Dog::setIdea(int i, std::string const& idea) { _brain->setIdea(i, idea); }
+
+// Getter
+std::string const& Dog::getIdea(int index) const { return(_brain->getIdea(index)); }

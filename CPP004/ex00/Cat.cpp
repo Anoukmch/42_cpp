@@ -18,7 +18,7 @@ Cat::Cat() : Animal() {
 	std::cout << "Cat Default constructor called." << std::endl;
 }
 
-Cat::Cat( Cat const & src) : Animal() {
+Cat::Cat( Cat const & src) : Animal(src) {
 	std::cout << "Cat Copy constructed called" << std::endl;
 	*this = src;
 }
@@ -32,7 +32,7 @@ Cat::~Cat( void ) {
 Cat & Cat::operator=( Cat const & src) {
 	std::cout << "Cat Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type;
+		_type = src.getType();
 	}
 	return ( *this );
 }

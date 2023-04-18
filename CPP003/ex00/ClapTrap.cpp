@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:11:48 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/03/20 18:50:18 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 17:54:33 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,15 @@ ClapTrap & ClapTrap::operator=( ClapTrap const & src) {
 // Member functions
 void ClapTrap::attack(const std::string& target) {
 	if (_hit == 0) {
-		std::cout << "ClapTrap " << _name << " cannot attack anymore because is dead " << std::endl;
+		std::cout << _name << " cannot attack anymore because is dead " << std::endl;
 		return ;
 	}
 	if (_energy == 0) {
-		std::cout << "ClapTrap " << _name << " cannot attack anymore : needs some energy (Remaining energy points : " << _energy << ")" << std::endl;
+		std::cout << _name << " cannot attack anymore : needs some energy (Remaining energy points : " << _energy << ")" << std::endl;
 		return ;
 	}
 	_energy -= 1;
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _damage << " points of damage! ";
+	std::cout << _name << " attacks " << target << ", causing " << _damage << " points of damage! ";
 	std::cout << "Costing 1 energy point (Remaining energy points : " << _energy << ")" << std::endl;
 }
 
@@ -83,6 +83,3 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "(Remaining hit points : " << _hit << ") | ";
 	std::cout << "Costing 1 energy point (Remaining energy points : " << _energy << ")" << std::endl;
 }
-
-//  ClapTrap can’t do anything if it has no hit points or energy points left
-// If motivated, try to limit hit points to the maximum

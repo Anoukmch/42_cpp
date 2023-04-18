@@ -18,7 +18,7 @@ Dog::Dog() : Animal(), _brain(new Brain()) {
 	_type = "Dog";
 }
 
-Dog::Dog( Dog const & src) : Animal(), _brain(new Brain(*src._brain)) {
+Dog::Dog( Dog const & src) : Animal(src), _brain(NULL) {
 	std::cout << "Dog Copy constructed called" << std::endl;
 	*this = src;
 }
@@ -33,7 +33,10 @@ Dog::~Dog( void ) {
 Dog & Dog::operator=( Dog const & src) {
 	std::cout << "Dog Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type;
+		_type = src.getType();
+		if (_brain != NULL)
+			delete _brain;
+		_brain = new Brain(*src._brain);
 	}
 	return ( *this );
 }
@@ -42,3 +45,9 @@ Dog & Dog::operator=( Dog const & src) {
 void Dog::makeSound() const {
 	std::cout << _type << " : Wouf Wouf" << std::endl;
 }
+
+// Setter
+void Dog::setIdea(int i, std::string const& idea) { _brain->setIdea(i, idea); }
+
+// Getter
+std::string const& Dog::getIdea(int index) const { return(_brain->getIdea(index)); }

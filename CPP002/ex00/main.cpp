@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 12:24:41 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/14 12:30:13 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:17:50 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-
 	Fixed a;
 	Fixed b( a );
 	Fixed c;

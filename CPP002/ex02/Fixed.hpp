@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:46:42 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/20 13:51:33 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 11:57:29 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(Fixed const& copy);
-		Fixed(const int integer); // Fixed const b in PDF ??
+		Fixed(const int integer);
 		Fixed(const float fPoint);
 		~Fixed();
-
 		Fixed & operator=(const Fixed & var);
+
 		int getRawBits( void ) const;
 		void setRawBits(int const raw);
 		float toFloat( void ) const;
 		int toInt( void ) const;
 
-		bool operator==(Fixed const& a);
-		bool operator!=(Fixed const& a);
-		bool operator>(Fixed const &a);
-		bool operator>=(Fixed const &a);
-		bool operator<(Fixed const &a);
-		bool operator<=(Fixed const &a);
+		bool operator==(Fixed const& a) const;
+		bool operator!=(Fixed const& a) const;
+		bool operator>(Fixed const& a) const;
+		bool operator>=(Fixed const &a) const;
+		bool operator<(Fixed const &a) const;
+		bool operator<=(Fixed const &a) const;
 
-		Fixed operator+(Fixed const& a);
-		Fixed operator-(Fixed const& a);
-		Fixed operator*(Fixed const& a);
-		Fixed operator/(Fixed const& a);
+		Fixed operator+(Fixed const& a) const;
+		Fixed operator-(Fixed const& a) const;
+		Fixed operator*(Fixed const& a) const;
+		Fixed operator/(Fixed const& a) const;
 
 		Fixed& operator++(void);
 		Fixed operator++(int);

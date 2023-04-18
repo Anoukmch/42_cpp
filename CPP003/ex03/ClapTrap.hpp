@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 10:02:44 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/03/20 16:07:41 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/12 13:47:30 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ClapTrap
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		int getHIT(void);
 
 	protected :
 		std::string _name;

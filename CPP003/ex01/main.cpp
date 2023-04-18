@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:22:34 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/20 18:25:05 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 17:48:54 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,3 @@ int	main(void) {
 	trap2.beRepaired(1000);
 	return (0);
 }
-
-// How can I call a constructor copy with an overload ?
-

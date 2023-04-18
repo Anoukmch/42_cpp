@@ -11,9 +11,7 @@
 #include <algorithm>
 #include <functional>
 #include "Account.hpp"
-#include <iostream>
-#include <string>
-#include <iomanip>
+
 
 int		main( void ) {
 

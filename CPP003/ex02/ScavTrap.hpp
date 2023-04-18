@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:43:26 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/20 18:44:09 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:25:31 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define SCAV_TRAP_H
 
 # include <iostream>
-#include "ClapTrap.hpp" // try without this call
+#include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
@@ -27,8 +27,6 @@ class ScavTrap : public ClapTrap
 
 		void guardGate();
 		void attack(const std::string& target);
-
-	private :
 
 };
 

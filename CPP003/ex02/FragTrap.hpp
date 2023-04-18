@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:43:26 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/20 18:50:46 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 17:37:13 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define Frag_TRAP_H
 
 # include <iostream>
-#include "ClapTrap.hpp" // try without this call
+#include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {
@@ -26,9 +26,6 @@ class FragTrap : public ClapTrap
 		~FragTrap( void );
 
 		void highFivesGuys(void);
-		void attack(const std::string& target);
-
-	private :
 
 };
 

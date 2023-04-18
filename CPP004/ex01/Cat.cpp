@@ -18,8 +18,8 @@ Cat::Cat() : Animal(), _brain(new Brain()) {
 	_type = "Cat";
 }
 
-Cat::Cat( Cat const & src) : Animal() { // missing pointer 
-	std::cout << "Cat Copy constructed called" << std::endl;
+Cat::Cat( Cat const & src) : Animal(src), _brain(NULL) {
+	std::cout << "Cat Copy constructor called" << std::endl;
 	*this = src;
 }
 
@@ -33,7 +33,10 @@ Cat::~Cat( void ) {
 Cat & Cat::operator=( Cat const & src) {
 	std::cout << "Cat Copy assignment operator called" << std::endl;
 	if ( this != &src ) {
-		_type = src._type;
+		_type = src.getType();
+		if (_brain != NULL)
+			delete _brain;
+		_brain = new Brain(*src._brain);
 	}
 	return ( *this );
 }
@@ -42,3 +45,10 @@ Cat & Cat::operator=( Cat const & src) {
 void Cat::makeSound() const {
 	std::cout << _type << " : Miaou Miaou" << std::endl;
 }
+
+// Setter
+void Cat::setIdea(int i, std::string const& idea) { _brain->setIdea(i, idea); }
+
+// Getter
+std::string const& Cat::getIdea(int index) const { return(_brain->getIdea(index)); }
+

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+         #
+#    By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:27:44 by jmatheis          #+#    #+#              #
-#    Updated: 2023/04/03 20:30:15 by anoukmechai      ###   ########.fr        #
+#    Updated: 2023/04/05 12:49:18 by amechain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME =  harlfilter
+NAME =  harlFilter
 
 M_SRC = main.cpp \
 		Harl.cpp

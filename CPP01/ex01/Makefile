@@ -6,7 +6,7 @@
 #    By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:27:44 by jmatheis          #+#    #+#              #
-#    Updated: 2023/01/15 19:46:19 by amechain         ###   ########.fr        #
+#    Updated: 2023/04/05 11:02:19 by amechain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME =  moar
+NAME =  ex01
 
-M_SRC = main.cpp
+M_SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
 M_OBJS = $(M_SRC:.cpp=.o)
 

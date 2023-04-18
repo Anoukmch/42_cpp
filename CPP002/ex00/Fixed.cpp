@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/05 15:20:21 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/06 13:48:09 by amechain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 // Constructors
@@ -18,20 +30,19 @@ Fixed::~Fixed(void) {
 // Members Functions
 int Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (_fixPt);
+	return (this->_fixPt);
 }
 
 void Fixed::setRawBits(int const raw) {
 	std::cout << "setRawBits member function called" << std::endl;
-	_fixPt = raw;
+	this->_fixPt = raw;
 }
 
 // Operator overload
 Fixed& Fixed::operator=(const Fixed & var) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &var)
-		_fixPt = var.getRawBits();
+		this->_fixPt = var.getRawBits();
 	return (*this);
 }
 
-// in operator=, why not -> *this = var ?

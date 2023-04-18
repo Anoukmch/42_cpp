@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:43:26 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/20 17:18:39 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:57:19 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ class ScavTrap : public ClapTrap
 
 		void guardGate();
 		void attack(const std::string& target);
-
-	private :
 
 };
 

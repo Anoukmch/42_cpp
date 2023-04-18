@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 12:24:09 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/04/03 18:01:54 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/04/07 20:30:32 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_H
-#define ICHARACTER_H
+#ifndef CHARACTER_H
+#define CHARACTER_H
 
 # include <iostream>
 # include "ICharacter.hpp"
@@ -22,20 +22,20 @@ class Character : public ICharacter
 	public :
 		Character();
 		Character( Character const & src);
+		Character(std::string name);
 		Character &operator=( Character const & src);
-		virtual ~Character( void );
+		~Character( void );
 
-		virtual std::string const & getName() const;
-		virtual void equip(AMateria* m);
-		virtual void unequip(int idx);
-		virtual void use(int idx, Character& target);
-		
-	protected :
+		std::string const & getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
+		void free_inventory(void);
+
+	private :
 		std::string _name;
-		
+		AMateria* _materias[4];
+
 };
 
 #endif
-
-// Whats is the purpose of creating an interface ?
-// Can't we just declare the function only in Character ?  

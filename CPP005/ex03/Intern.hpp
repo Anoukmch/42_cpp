@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 13:55:00 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/21 17:39:10 by amechain         ###   ########.fr       */
+/*   Created: 2023/04/12 17:11:39 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/12 17:38:10 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONG_ANIMAL_H
-#define WRONG_ANIMAL_H
+#ifndef INTERN_H
+#define INTERN_H
 
 # include <iostream>
+#include "AForm.hpp"
 
-class WrongAnimal
+class Intern
 {
 	public :
-		WrongAnimal();
-		WrongAnimal( WrongAnimal const & src);
-		WrongAnimal &operator=( WrongAnimal const & src);
-		~WrongAnimal( void );
+		Intern();
+		Intern( Intern const & src);
+		Intern &operator=( Intern const & src);
+		~Intern( void );
 
-		std::string const &getType(void) const;
-		void makeSound() const;
+		AForm* makeForm( std::string const& _formName, std::string const& _formTarget ) const;
 
-	protected :
-		std::string _type;
+		class FormDontExists : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+
+	private :
+
 };
 
 #endif
-

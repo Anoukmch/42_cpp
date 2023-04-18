@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:46:42 by amechain          #+#    #+#             */
-/*   Updated: 2023/03/14 12:31:01 by amechain         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:22:44 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Fixed
 		Fixed();
 		Fixed(Fixed const& copy);
 		~Fixed();
-
 		Fixed & operator=(const Fixed & var);
+
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 
