@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:24:14 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/12 17:00:56 by amechain         ###   ########.fr       */
+/*   Updated: 2023/05/19 15:37:48 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,5 @@ int main()
 	Jacques.executeForm(RobotomyRequestForm);
 	std::cout << std::endl;
 }
+
+// Why is there no throw or try or catch in this main ? 

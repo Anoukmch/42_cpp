@@ -1,12 +1,12 @@
 # Program name
-NAME	= ex00
+NAME	= ex01
 
 # Compiler
 CC		= c++
-CFLAGS	= -Werror -Wextra -Wall -g -std=c++98
+CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
 # Files
-SRCS	= main.cpp Bureaucrat.cpp
+SRCS	= main.cpp Scalar.cpp
 OBJS	= $(SRCS:.cpp=.o)
 INC		= -I ./
 
