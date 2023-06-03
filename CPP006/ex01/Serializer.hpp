@@ -14,11 +14,13 @@ class Serializer
 		static Data* deserialize(uintptr_t raw);
 
 	private :
-		static Serializer(); // try
+		Serializer();
 		Serializer( Serializer const & src);
 		Serializer &operator=( Serializer const & src);
 		~Serializer( void );
 
 };
+
+std::ostream &operator<<( std::ostream &flux, Data const& var );
 
 #endif

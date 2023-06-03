@@ -1,6 +1,11 @@
 #include "Scalar.hpp"
 
-ScalarConverter::ScalarConverter() : _char(0), _int(0), _float(0), _double(0) {}
+char ScalarConverter::_char = 0;
+int ScalarConverter::_int = 0;
+float ScalarConverter::_float = 0;
+double ScalarConverter::_double = 0;
+
+ScalarConverter::ScalarConverter() {} // Check the constructor : should they be empty ?
 
 ScalarConverter::ScalarConverter( ScalarConverter const & src) {
 	*this = src;
@@ -11,7 +16,7 @@ ScalarConverter::~ScalarConverter( void ) {
 }
 
 // Operator overload
-ScalarConverter & ScalarConverter::operator=( ScalarConverter const & src) {
+ScalarConverter & ScalarConverter::operator=( ScalarConverter const & src) { // Check : probably delete it all
 	if ( this != &src ) {
 		_char = src._char;
 		_int = src._int;
@@ -20,11 +25,6 @@ ScalarConverter & ScalarConverter::operator=( ScalarConverter const & src) {
 	}
 	return ( *this );
 }
-
-char ScalarConverter::getChar(void) const { return _char; }
-int ScalarConverter::getInt(void) const { return _int; }
-float ScalarConverter::getFloat(void) const { return _float; }
-double ScalarConverter::getDouble(void) const { return _double; }
 
 bool ScalarConverter::isImpossible(std::string input)
 {
@@ -128,39 +128,35 @@ void ScalarConverter::convert(std::string const& input) // Store non-sense value
 		_double = static_cast<double>(_int);
 	}
 	else
-		throw WrongInput();
+		throw std::exception();
 }
 
-std::ostream &operator<<( std::ostream &flux, ScalarConverter const& var ) {
-	flux << "char : ";
-	if ( var.getInt() > CHAR_MAX || var.getInt() < CHAR_MIN
-		|| var.getFloat() > CHAR_MAX || var.getFloat() < CHAR_MIN
-		|| var.getDouble() > CHAR_MAX || var.getDouble() < CHAR_MIN
-		|| isnan(var.getFloat()))
-		flux << "impossible" << std::endl;
-	else if (!std::isprint(var.getInt()))
-		flux << "not displayable" << std::endl;
-	else
-		flux << var.getChar() << std::endl;
-
-	flux << "int : ";
-	if ( var.getFloat() > INT_MAX || var.getFloat() < INT_MIN
-		|| var.getDouble() > INT_MAX || var.getDouble() < INT_MIN
-		|| isnan(var.getFloat()))
-		flux << "impossible" << std::endl;
-	else
-		flux << var.getInt() << std::endl;
-
-	if (var.getFloat() == static_cast<int>(var.getFloat()))
-		flux << "float : " << std::fixed << std::setprecision(1) << var.getFloat() << "f" << std::endl;
-	else
-		flux << "float : " << var.getFloat() << "f" << std::endl;
-
-	flux << "double : " << var.getDouble() << std::endl;
-	return ( flux );
-}
-
-const char* ScalarConverter::WrongInput::what() const throw()
+void ScalarConverter::printer(void)
 {
-	return ("-> The input is not valid : please send a literal (char, int, double, float)");
+	std::cout << "char : ";
+	if ( _int > CHAR_MAX || _int < CHAR_MIN
+		|| _float > CHAR_MAX || _float < CHAR_MIN
+		|| _double > CHAR_MAX || _double < CHAR_MIN
+		|| isnan(_float))
+		std::cout << "impossible" << std::endl;
+	else if (!std::isprint(_int))
+		std::cout << "not displayable" << std::endl;
+	else
+		std::cout << _char << std::endl;
+
+	std::cout << "int : ";
+	if ( _float > INT_MAX || _float < INT_MIN
+		|| _double > INT_MAX || _double < INT_MIN
+		|| isnan(_float))
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << _int << std::endl;
+
+	if (_float == static_cast<int>(_float))
+		std::cout << "float : " << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
+	else
+		std::cout << "float : " << _float << "f" << std::endl;
+
+	std::cout << "double : " << _double << std::endl;
 }
+

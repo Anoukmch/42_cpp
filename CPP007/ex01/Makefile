@@ -6,7 +6,7 @@ CC		= c++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
 # Files
-SRCS	= main.cpp Serializer.cpp
+SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 INC		= -I ./
 

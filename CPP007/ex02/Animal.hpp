@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/03 16:31:14 by amechain         ###   ########.fr       */
+/*   Created: 2023/03/21 13:55:00 by amechain          #+#    #+#             */
+/*   Updated: 2023/04/07 12:39:39 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Scalar.hpp"
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
-int	main(int ac, char **ag)
+# include <iostream>
+
+class Animal
 {
-	if (ac != 2 || !ag[1][0])
-	{
-		std::cout << "Program requires one argument" << std::endl;
-		return (1);
-	}
-	try
-	{
-		ScalarConverter::convert(ag[1]);
-		ScalarConverter::printer();
-	}
-	catch(std::exception const& e)
-	{
-		std::cout << e.what() << " : Invalid input !" << std::endl;
-	}
+	public :
+		Animal();
+		Animal( Animal const & src);
+		Animal &operator=( Animal const & src);
+		virtual ~Animal( void );
 
-}
+		std::string const &getType(void) const;
+		virtual void makeSound() const;
+
+	protected :
+		std::string _type;
+};
+
+#endif
+

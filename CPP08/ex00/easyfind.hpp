@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/03 16:31:14 by amechain         ###   ########.fr       */
+/*   Created: 2023/06/01 17:41:51 by amechain          #+#    #+#             */
+/*   Updated: 2023/06/01 17:59:18 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Scalar.hpp"
+#ifndef EASY_FIND_H
+#define EASY_FIND_H
 
-int	main(int ac, char **ag)
+# include <iostream>
+# include <iomanip>
+# include <string>
+
+template <typename T>
+T const &	easyfind(T &a, int i)
 {
-	if (ac != 2 || !ag[1][0])
-	{
-		std::cout << "Program requires one argument" << std::endl;
-		return (1);
-	}
-	try
-	{
-		ScalarConverter::convert(ag[1]);
-		ScalarConverter::printer();
-	}
-	catch(std::exception const& e)
-	{
-		std::cout << e.what() << " : Invalid input !" << std::endl;
-	}
 
 }
+
+// T is a container of integers ->vector ? all of them ?
+
+#endif
