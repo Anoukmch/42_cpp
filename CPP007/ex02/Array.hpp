@@ -62,7 +62,7 @@ class Array
 			return (_array[index]);
 		}
 
-		T const& operator[] (int index)
+		const T& operator[] (int index)
 		{
 			if (index < 0 || index >= _size)
 				throw std::exception();

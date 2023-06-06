@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:24:14 by amechain          #+#    #+#             */
-/*   Updated: 2023/05/19 15:37:48 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/05 17:17:28 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,36 @@
 
 int main()
 {
-	Bureaucrat Pierre("Pierre", 1);
-	std::cout << std::endl;
-	Bureaucrat Paul("Paul", 50);
-	std::cout << std::endl;
-	Bureaucrat Jacques("Jacques", 1);
-
-	std::cout << std::endl;
-	PresidentialPardonForm PresidentialPardonForm(Pierre.getName());
-	std::cout << std::endl;
-	RobotomyRequestForm RobotomyRequestForm("Donald Trump");
-	std::cout << std::endl;
-	ShrubberyCreationForm ShrubberyCreationForm("Forest");
-
-	std::cout << std::endl;
-	Pierre.signForm(RobotomyRequestForm);
-	std::cout << std::endl;
-	Pierre.executeForm(RobotomyRequestForm);
-	std::cout << std::endl;
-	Jacques.executeForm(RobotomyRequestForm);
-	std::cout << std::endl;
-	Jacques.executeForm(RobotomyRequestForm);
-	std::cout << std::endl;
+	try
+	{
+		PresidentialPardonForm PresidentialPardonForm("Lincoln Burrows");
+		RobotomyRequestForm RobotomyRequestForm("Donald Trump");
+		ShrubberyCreationForm ShrubberyCreationForm("Forest");
+		std::cout << std::endl;
+		{
+			Bureaucrat Winner("Winner", 1);
+			Winner.signForm(PresidentialPardonForm);
+			Winner.executeForm(PresidentialPardonForm);
+			Winner.signForm(RobotomyRequestForm);
+			Winner.executeForm(RobotomyRequestForm);
+			Winner.signForm(ShrubberyCreationForm);
+			Winner.executeForm(ShrubberyCreationForm);
+		}
+		std::cout << std::endl;
+		{
+			Bureaucrat Beginner("Beginner", 150);
+			Beginner.signForm(PresidentialPardonForm);
+			Beginner.executeForm(PresidentialPardonForm);
+			Beginner.signForm(RobotomyRequestForm);
+			Beginner.executeForm(RobotomyRequestForm);
+			Beginner.signForm(ShrubberyCreationForm);
+			Beginner.executeForm(ShrubberyCreationForm);
+		}
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
 
-// Why is there no throw or try or catch in this main ? 
+// Why is there no throw or try or catch in this main ?

@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:48:55 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/12 17:10:09 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/05 17:36:23 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,16 @@ void	Bureaucrat::decrementGrade(void) {
 	std::cout << "was relegated to grade " << this->_grade << std::endl;
 }
 
-void	Bureaucrat::signForm(AForm & obj) const {
+void	Bureaucrat::signForm(AForm & form) const {
 	try
 	{
-		obj.beSigned(*this);
-		std::cout << this->_name << " signed " << obj.getName() << std::endl;
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
 
 	}
 	catch(std::exception const& e)
 	{
-		std::cerr << this->_name << " couldn't sign " << obj.getName() << " because " << e.what() << std::endl;
+		std::cerr << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 
@@ -94,7 +94,6 @@ void	Bureaucrat::executeForm(AForm const & form) {
 	try
 	{
 		form.execute(*this);
-		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{

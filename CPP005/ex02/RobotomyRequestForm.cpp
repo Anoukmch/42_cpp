@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:24:39 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/12 16:45:46 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:22:17 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string const& RobotomyRequestForm::getTarget(void) const { return this->_ta
 
 // Members Function
 void	RobotomyRequestForm::ExecuteForm( void ) const { // IS THAT 50% OF THE TIME ?
-	std::cout << "Brzzzzzzzzzzzzzzzzzzzzzzz" << std::endl;
+	std::cout << "Brzzzzzzzzzzzzzzzzzzzzzzz! ";
 	if (test == 0) {
 		std::cout << "Target " << this->_target << " has been robotomized !" << std::endl;
 		test = 1;

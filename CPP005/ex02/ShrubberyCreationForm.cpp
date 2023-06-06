@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:24:44 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/13 13:55:00 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/05 16:49:23 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,26 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=( ShrubberyCreationForm 
 std::string const& ShrubberyCreationForm::getTarget(void) const { return this->_target; }
 
 // Members Function
-void	ShrubberyCreationForm::ExecuteForm( void ) const { // PAS FINI
-	std::ofstream outfile(_target + "shrubbery"); ? // Opening specification ?
+void	ShrubberyCreationForm::ExecuteForm( void ) const {
+	std::ofstream outfile((_target + "_shrubbery").c_str());
+	//std::ofstream outfile((target_ + "_shrubbery").c_str(), std::ios::app);
 	if(!outfile.is_open()) {
-		std::cout << "Failed to open output file" << std::endl ; // Throw exception
+		std::cout << "Failed to open output file" << std::endl ;
+		throw std::logic_error("Failed to open " + getName() + " file"); // try, maybe need to add this
 	}
-	outfile << content; // Tree
+	outfile << "           *" << std::endl;
+	outfile << "          /|\\" << std::endl;
+	outfile << "         / | \\" << std::endl;
+	outfile << "        /  |  \\" << std::endl;
+	outfile << "       /   |   \\" << std::endl;
+	outfile << "      /    |    \\" << std::endl;
+	outfile << "     /     |     \\" << std::endl;
+	outfile << "    /      |      \\" << std::endl;
+	outfile << "   /       |       \\" << std::endl;
+	outfile << "  /        |        \\" << std::endl;
+	outfile << " /_________|_________\\" << std::endl;
+	outfile << "     |     |     |" << std::endl;
+	outfile << "     |     |     |" << std::endl;
 	std::cout << "ASCII trees is now located at " << this->_target << std::endl;
 	outfile.close();
 }

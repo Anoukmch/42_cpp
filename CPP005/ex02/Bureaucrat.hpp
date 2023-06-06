@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:48:52 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/12 15:24:50 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/05 17:26:34 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Bureaucrat
 
 		void	incrementGrade(void);
 		void	decrementGrade(void);
-		void	signForm(AForm & obj) const;
+		void	signForm(AForm & form) const;
 		void	executeForm(AForm const & form);
 
 		class GradeTooHighException : public std::exception {

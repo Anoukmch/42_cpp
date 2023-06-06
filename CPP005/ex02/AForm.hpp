@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:20:29 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/12 15:18:01 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/05 18:32:46 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm
 		AForm();
 		AForm( AForm const & src);
 		AForm &operator=( AForm const & src);
-		~AForm( void );
+		virtual ~AForm( void );
 		AForm( const std::string name, const int gradeSign, const int gradeExe);
 
 		std::string const& getName(void) const;
