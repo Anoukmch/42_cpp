@@ -1,12 +1,12 @@
 # Program name
-NAME	= ex02
+NAME	= ex01
 
 # Compiler
 CC		= c++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
 # Files
-SRCS	= main.cpp
+SRCS	= main.cpp Span.cpp
 OBJS	= $(SRCS:.cpp=.o)
 INC		= -I ./
 

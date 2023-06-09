@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:41:51 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/06 18:48:07 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/07 10:50:43 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@
 # include <deque>
 # include <vector>
 
+// If you receive a const ref and you need to interates on it
+// Then your iterator should also be const 
+
 template <typename T>
-typename T::const_iterator easyfind(T const& a, int const i)
+typename T::iterator easyfind(T & a, int const i)
 {
-	typename T::const_iterator it;
+	typename T::iterator it;
 
 	it = std::find(a.begin(), a.end(), i); // ask GPT for typename
 	if (it == a.end())
@@ -31,15 +34,12 @@ typename T::const_iterator easyfind(T const& a, int const i)
 	return (it);
 }
 
+/* 
+	If find works on const iterators (begin and end)
+	The return value will be const_int since it returns something
+	in the range of const_iterators
+*/
+
 #endif
 
-
-// typename T::iterator easyfind(T &c, int i)
-// {
-// 	typename T::iterator	it;
-// 	it = find(c.begin(), c.end(), i);
-// 	if (it == c.end())
-// 		throw (NotFoundException());
-// 	return (it);
-// }
 
