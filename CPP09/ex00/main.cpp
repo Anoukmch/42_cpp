@@ -5,23 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/15 21:59:58 by anoukmechai      ###   ########.fr       */
+/*   Created: 2023/06/12 13:55:59 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/06/15 21:56:17 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "BitcoinExchange.hpp"
 
-int main( void ) 
+// Je ne comprends pas bien l'ambivalence entre main et classe. 
+// Ici je ne sais pas quelles fonctions vont dans la classe ou dans le main.
+
+int main(int ac, char** ag)
 {
-	Span span(5);
-
-	span.addNumber(34);
-	span.addNumber(22);
-	span.addNumber(10);
-	span.addNumber(20);
-	span.addNumber(24);
-	
-	std::cout << span.longestSpan() << std::endl;
-	std::cout << span.shortestSpan() << std::endl;
+	if (ac != 2)
+	{
+		std::cout << "Program requires one file" << std::endl;
+		return (1);
+	}
+	try
+	{
+		BitcoinExchange btc;
+		btc.parseLine(btc.openFile(ag[1]), '|');
+	}
+	catch(std::exception const& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

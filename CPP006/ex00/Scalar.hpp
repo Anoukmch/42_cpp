@@ -16,9 +16,9 @@ class ScalarConverter
 		static void printer(void);
 
 		static int _int;
-		int _int_nnstatic;
 
 	private :
+		static int _int;
 		static char _char;
 		static float _float;
 		static double _double;

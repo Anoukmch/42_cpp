@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/15 21:59:58 by anoukmechai      ###   ########.fr       */
+/*   Created: 2023/06/12 14:00:11 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/06/15 22:11:22 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "PmergeMe.hpp"
 
-int main( void ) 
-{
-	Span span(5);
+PmergeMe::PmergeMe() {
+}
 
-	span.addNumber(34);
-	span.addNumber(22);
-	span.addNumber(10);
-	span.addNumber(20);
-	span.addNumber(24);
-	
-	std::cout << span.longestSpan() << std::endl;
-	std::cout << span.shortestSpan() << std::endl;
+PmergeMe::PmergeMe( PmergeMe const & src) {
+	*this = src;
+}
+
+// Destructors
+PmergeMe::~PmergeMe( void ) {
+}
+
+// Operator overload
+PmergeMe & PmergeMe::operator=( PmergeMe const & src) { 
+	if ( this != &src ) {
+		// Do something 
+	}
+	return ( *this );
 }

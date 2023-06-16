@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/15 21:59:58 by anoukmechai      ###   ########.fr       */
+/*   Created: 2023/06/12 13:55:59 by anoukmechai       #+#    #+#             */
+/*   Updated: 2023/06/15 22:18:46 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "PmergeMe.hpp"
 
-int main( void ) 
+int main(int ac, char** ag)
 {
-	Span span(5);
-
-	span.addNumber(34);
-	span.addNumber(22);
-	span.addNumber(10);
-	span.addNumber(20);
-	span.addNumber(24);
+	if (ac != 2)
+	{
+		std::cout << "Program requires one argument" << std::endl;
+		return (1);
+	}
+	try
+	{
 	
-	std::cout << span.longestSpan() << std::endl;
-	std::cout << span.shortestSpan() << std::endl;
+	}
+	catch(std::exception const& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
+
+// Why a stack ? 
