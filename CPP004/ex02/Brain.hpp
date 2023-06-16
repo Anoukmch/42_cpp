@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:10:50 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/07 14:04:07 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/08 19:30:47 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Brain
 
 	private :
 		std::string ideas[100];
+		int test;
 };
 
 #endif

@@ -12,7 +12,19 @@
 
 #include "PmergeMe.hpp"
 
+// ALREADY SORTED DATA
+
 PmergeMe::PmergeMe() {
+}
+
+PmergeMe::PmergeMe(int ac, char** ag)
+{
+	// Only digit separated by amount of space
+	// int ranges (on atol) + no negative numbers
+	// no duplicates (on vector)
+
+	for (size_t i = 0; i < ac; ++i)
+		isValidExpression(ag[i]);
 }
 
 PmergeMe::PmergeMe( PmergeMe const & src) {
@@ -24,9 +36,20 @@ PmergeMe::~PmergeMe( void ) {
 }
 
 // Operator overload
-PmergeMe & PmergeMe::operator=( PmergeMe const & src) { 
+PmergeMe & PmergeMe::operator=( PmergeMe const & src) {
 	if ( this != &src ) {
-		// Do something 
+		// Do something
 	}
 	return ( *this );
 }
+
+void PmergeMe::isValidExpression(std::string const & number)
+{
+	std::istringstream iss(number);
+	float nbr;
+
+	iss >> nbr;
+	std::cout << nbr << std::endl;
+}
+
+// Clarify this : if (value < 0 || !(iss && iss.eof())) throw std::runtime_error("Error");

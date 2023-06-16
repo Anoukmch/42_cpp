@@ -6,14 +6,15 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:48:55 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/17 19:40:29 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:45:29 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-// Constructors
- {
+//Constructors
+Bureaucrat::Bureaucrat() // ADD THIS
+{
 	std::cout << "Bureaucrat Default constructor called." << std::endl;
 }
 
