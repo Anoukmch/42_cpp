@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:44:48 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/07 18:27:06 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/09 17:32:07 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 class Span
 {
-	public : 
+	public :
 		Span();
 		Span(unsigned int N);
 		Span( Span const & src);
@@ -32,8 +32,10 @@ class Span
 		void addNumber(int const& value);
 		int shortestSpan();
 		int longestSpan();
-	
-	private : 
+		void fillSpan();
+		std::vector<int> const& getTable(void)
+
+	private :
 		std::vector<int> _table;
 		unsigned int _n;
 };
