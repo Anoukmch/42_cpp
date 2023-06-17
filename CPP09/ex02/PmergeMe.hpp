@@ -6,7 +6,7 @@
 /*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:58:18 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/16 21:47:12 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/16 22:36:59 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@ class PmergeMe
 		PmergeMe &operator=( PmergeMe const & src);
 		~PmergeMe( void );
 
-		void isValidExpression(std::string const & number);
+		unsigned int isValidExpression(std::string const & number);
+		void printer(void);
 
 	private :
-		std::vector<int> _vector;
+		std::vector<unsigned int> _vector;
 };
+
+std::ostream &operator<<( std::ostream &flux, PmergeMe const& var);
 
 #endif
