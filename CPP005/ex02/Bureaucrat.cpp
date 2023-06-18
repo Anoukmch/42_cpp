@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:48:55 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/05 17:36:23 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:44:35 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(
 
 // Destructors
 Bureaucrat::~Bureaucrat( void ) {
-	std::cout << "Bureaucrat Destructor called." << std::endl;
 }
 
 // Operator overload

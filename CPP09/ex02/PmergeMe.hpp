@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:58:18 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/16 22:36:59 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/17 20:30:36 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <iostream>
 # include <stack>
-#include <sstream>
+# include <sstream>
+# include <vector>
 
 class PmergeMe
 {
@@ -28,9 +29,15 @@ class PmergeMe
 
 		unsigned int isValidExpression(std::string const & number);
 		void printer(void);
-
+		void sort(void);
+		std::vector< std::pair<unsigned int, unsigned int> > create_pairs(void);
+		void swap_pairs(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
+		//void sort_seq(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
+		bool hasDuplicates(void);
+		// Remove this function from class. Object do not need to use them
 	private :
 		std::vector<unsigned int> _vector;
+		int _odd;
 };
 
 std::ostream &operator<<( std::ostream &flux, PmergeMe const& var);

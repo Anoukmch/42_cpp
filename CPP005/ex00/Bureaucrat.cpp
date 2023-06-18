@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:48:55 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/11 19:33:30 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:44:23 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ Bureaucrat::Bureaucrat( Bureaucrat const & src) : _name(src._name) {
 	*this = src;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(LOWEST_GRADE) { // Test if I give a wrong value then only after throw error
-	std::cout << "Bureaucrat overloaded constructor called." << std::endl;						// Should I switch it to grade variable ?
+Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(LOWEST_GRADE) {
+	std::cout << "Bureaucrat overloaded constructor called." << std::endl;
 	std::cout << "Bureaucrat " << _name << " ";
 	if (grade < HIGHEST_GRADE)
 		throw GradeTooHighException();
@@ -35,7 +35,6 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(
 
 // Destructors
 Bureaucrat::~Bureaucrat( void ) {
-	std::cout << "Bureaucrat Destructor called." << std::endl;
 }
 
 // Operator overload

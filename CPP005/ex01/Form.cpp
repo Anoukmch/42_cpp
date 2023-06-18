@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:21:56 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/11 17:00:24 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:49:40 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ Form::Form( Form const & src) : _name(src._name), _isSigned(false), _gradeSign(s
 	std::cout << "Form "<< _name << " has been created" << std::endl;
 }
 
-Form::Form( const std::string name, const int gradeSign, const int gradeExe) : _name(name),
+Form::Form( std::string name, int gradeSign, int gradeExe) : _name(name),
 																				_isSigned(false),
-																				_gradeSign(gradeSign), // TRY SENDING AN OUT OF RANGE INTEGER. IF BUG THEN CHANGE
-																				_gradeExe(gradeExe) { // PAS FINI
+																				_gradeSign(gradeSign),
+																				_gradeExe(gradeExe) {
 	std::cout << "Form overloaded constructor called." << std::endl;
 	if (gradeSign < HIGHEST_GRADE || gradeExe < HIGHEST_GRADE)
 		throw GradeTooHighException();
@@ -36,7 +36,6 @@ Form::Form( const std::string name, const int gradeSign, const int gradeExe) : _
 
 // Destructors
 Form::~Form( void ) {
-	std::cout << "Form Destructor called." << std::endl;
 }
 
 // Operator overload
@@ -81,10 +80,10 @@ const char* Form::AlreadySigned::what() const throw()
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("-> Grade is too high");
+	return ("-> Wrong grade input : too high");
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("-> Grade is too low");
+	return ("-> Wrong grade input : too low");
 }

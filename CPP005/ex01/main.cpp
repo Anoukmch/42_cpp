@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:33:43 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/08 18:03:13 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:33:08 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,18 @@ void	createForm(std::string name, int gradeSign, int gradeExe)
 
 int	main()
 {
-	Form Upgrade;
-	Form Registration_test("Registration", 5, 15);
-	Form Registration(Registration_test);
+	try
+	{
+		Form Upgrade;
+		Form Registration_test("Registration", 5, 15);
+		Form Registration(Registration_test);
 
-	std::cout << std::endl;
+		std::cout << std::endl;
+	}
+	catch(std::exception const& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	createForm("Demission", -2, 3);
 	createForm("Tax", 2, 160);
@@ -40,20 +47,27 @@ int	main()
 
 	std::cout << std::endl;
 
-	Form GDPR("GDPR", 2, 10);
-	Bureaucrat Jeff("Jeff", 10);
-	Bureaucrat Henrique("Henrique", 1);
+	try
+	{
+		Form GDPR("GDPR", 2, 10);
+		Bureaucrat Jeff("Jeff", 10);
+		Bureaucrat Henrique("Henrique", 1);
 
-	std::cout << std::endl;
+		std::cout << std::endl;
 
-	std::cout << Jeff << std::endl;
-	std::cout << GDPR << std::endl;
+		std::cout << Jeff << std::endl;
+		std::cout << GDPR << std::endl;
 
-	std::cout << std::endl;
+		std::cout << std::endl;
 
-	Jeff.signForm(GDPR);
-	Henrique.signForm(GDPR);
-	Henrique.signForm(GDPR);
+		Jeff.signForm(GDPR);
+		Henrique.signForm(GDPR);
+		Henrique.signForm(GDPR);
+	}
+	catch(std::exception const& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	return (0);
 }

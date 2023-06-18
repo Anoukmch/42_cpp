@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:20:29 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/11 16:29:18 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:34:46 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Form
 		Form( Form const & src);
 		Form &operator=( Form const & src);
 		~Form( void );
-		Form( const std::string name, const int gradeSign, const int gradeExe); // Try to remove the const to see if it work
+		Form( std::string name, int gradeSign, int gradeExe);
 
 		std::string const& getName(void) const;
 		bool const& getIsSigned(void) const;

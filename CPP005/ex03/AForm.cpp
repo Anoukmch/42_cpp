@@ -24,8 +24,8 @@ AForm::AForm( AForm const & src) : _name(src._name), _isSigned(false), _gradeSig
 
 AForm::AForm( const std::string name, const int gradeSign, const int gradeExe) : _name(name),
 																				_isSigned(false),
-																				_gradeSign(gradeSign), // TRY SENDING AN OUT OF RANGE INTEGER. IF BUG THEN CHANGE
-																				_gradeExe(gradeExe) { // PAS FINI
+																				_gradeSign(gradeSign),
+																				_gradeExe(gradeExe) {
 	std::cout << "AForm overloaded constructor called." << std::endl;
 	if (gradeSign < HIGHEST_GRADE || gradeExe < HIGHEST_GRADE)
 		throw GradeTooHighException();
@@ -35,7 +35,6 @@ AForm::AForm( const std::string name, const int gradeSign, const int gradeExe) :
 
 // Destructors
 AForm::~AForm( void ) {
-	std::cout << "AForm Destructor called." << std::endl;
 }
 
 // Operator overload
@@ -89,12 +88,12 @@ const char* AForm::AlreadySigned::what() const throw()
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("-> Grade is too high");
+	return ("-> Wrong grade input : too high");
 }
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("-> Grade is too low");
+	return ("-> Wrong grade input : too low");
 }
 
 const char* AForm::NotSigned::what() const throw()

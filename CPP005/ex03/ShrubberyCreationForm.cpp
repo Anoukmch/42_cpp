@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:24:44 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/05 16:49:23 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:15:19 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,11 @@ std::string const& ShrubberyCreationForm::getTarget(void) const { return this->_
 
 // Members Function
 void	ShrubberyCreationForm::ExecuteForm( void ) const {
-	std::ofstream outfile((_target + "_shrubbery").c_str());
-	//std::ofstream outfile((target_ + "_shrubbery").c_str(), std::ios::app);
-	if(!outfile.is_open()) {
-		std::cout << "Failed to open output file" << std::endl ;
-		throw std::logic_error("Failed to open " + getName() + " file"); // try, maybe need to add this
-	}
+	std::ofstream outfile((_target + "_shrubbery").c_str(), std::ofstream::app);
+
+	if(!outfile.is_open())
+		throw std::logic_error("failed to open " + getName() + " file");
+
 	outfile << "           *" << std::endl;
 	outfile << "          /|\\" << std::endl;
 	outfile << "         / | \\" << std::endl;

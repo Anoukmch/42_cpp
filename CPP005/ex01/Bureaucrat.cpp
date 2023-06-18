@@ -6,14 +6,14 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:48:55 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/08 17:45:29 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 18:52:32 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 //Constructors
-Bureaucrat::Bureaucrat() // ADD THIS
+Bureaucrat::Bureaucrat() : _name("Default name"), _grade(LOWEST_GRADE)
 {
 	std::cout << "Bureaucrat Default constructor called." << std::endl;
 }
@@ -23,8 +23,8 @@ Bureaucrat::Bureaucrat( Bureaucrat const & src) : _name(src._name) {
 	*this = src;
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(LOWEST_GRADE) { // Test if I give a wrong value then only after throw error
-	std::cout << "Bureaucrat overloaded constructor called." << std::endl;						// Should I switch it to grade variable ?
+Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(LOWEST_GRADE) {
+	std::cout << "Bureaucrat overloaded constructor called." << std::endl;
 	std::cout << "Bureaucrat " << _name << " ";
 	if (grade < HIGHEST_GRADE)
 		throw GradeTooHighException();
@@ -36,7 +36,6 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name), _grade(
 
 // Destructors
 Bureaucrat::~Bureaucrat( void ) {
-	std::cout << "Bureaucrat Destructor called." << std::endl;
 }
 
 // Operator overload

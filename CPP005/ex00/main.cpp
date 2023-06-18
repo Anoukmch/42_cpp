@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 16:33:43 by amechain          #+#    #+#             */
-/*   Updated: 2023/05/16 19:04:03 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:18:00 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	createBureaucrat(std::string name, int grade)
 {
 	try
 	{
-		Bureaucrat bureaucrat(name, grade); // has bureaucrat been created ? Why the destructor isn't called ?
+		Bureaucrat bureaucrat(name, grade);
 		Bureaucrat Bernard("Bernard", 5);
 	}
 	catch(std::exception const& e)
@@ -29,7 +29,7 @@ void	changeGrade(Bureaucrat &obj, std::string test)
 {
 	try
 	{
-		if (test == "++")
+		if (test == "+")
 			obj.incrementGrade();
 		else if (test == "-")
 			obj.decrementGrade();
@@ -42,20 +42,19 @@ void	changeGrade(Bureaucrat &obj, std::string test)
 
 int	main()
 {
-
-	Bureaucrat Henry;
-	Bureaucrat Paul("Paul", 5);
-	Bureaucrat Paulette(Paul);
-
-	std::cout << "Henry's name : " << Henry.getName() << std::endl;
-	std::cout << "Henry's grade : " << Henry.getGrade() << std::endl;
-	std::cout << "Paulette's name : " << Paulette.getName() << std::endl;
-	std::cout << "Paulette's grade : " << Paulette.getGrade() << std::endl;
-
-	std::cout << std::endl;
-
 	try
 	{
+		Bureaucrat Henry;
+		Bureaucrat Paul("Paul", 5);
+		Bureaucrat Paulette(Paul);
+
+		std::cout << "Henry's name : " << Henry.getName() << std::endl;
+		std::cout << "Henry's grade : " << Henry.getGrade() << std::endl;
+		std::cout << "Paulette's name : " << Paulette.getName() << std::endl;
+		std::cout << "Paulette's grade : " << Paulette.getGrade() << std::endl;
+
+		std::cout << std::endl;
+
 		Bureaucrat Jacques("Jacques", -5);
 		Bureaucrat Jacquette(Jacques);
 		std::cout << "Should not be printed" << std::endl;
@@ -76,6 +75,7 @@ int	main()
 
 	Bureaucrat Alfie("Alfie", 1);
 	Bureaucrat Alfette("Alfette", 150);
+	std::cout << std::endl;
 
 	changeGrade(Alfie, "+");
 	changeGrade(Alfie, "-");

@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 12:20:29 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/05 18:32:39 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:31:50 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AForm
 
 		void	beSigned(Bureaucrat const& obj);
 		void execute(Bureaucrat const & executor) const;
-		virtual void	ExecuteForm( void ) const = 0; // OR PROTECTED ?
+		virtual void	ExecuteForm( void ) const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:

@@ -15,8 +15,6 @@ class ScalarConverter
 		static bool isOnlyDigits(std::string const& input);
 		static void printer(void);
 
-		static int _int;
-
 	private :
 		static int _int;
 		static char _char;

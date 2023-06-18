@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:24:42 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/12 16:33:44 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:11:45 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class RobotomyRequestForm : public AForm
 
 		std::string const& getTarget(void) const;
 		void	ExecuteForm( void ) const;
-
-		static int		test;
 
 	private :
 		std::string _target;

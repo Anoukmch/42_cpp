@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:11:39 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/05 18:30:20 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:21:07 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ class Intern
 			public:
 				virtual const char* what() const throw();
 		};
-
-	private :
 
 };
 

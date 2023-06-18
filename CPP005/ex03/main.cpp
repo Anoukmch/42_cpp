@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 18:24:06 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/08 17:43:56 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 17:49:25 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 int main()
 {
-	Intern someRandomIntern;
-	AForm* rrf;
-	Bureaucrat someRandomBureaucrat("someRandomBureaucrat", 1);
-
 	try
 	{
+		Intern someRandomIntern;
+		AForm* rrf;
+		Bureaucrat someRandomBureaucrat("someRandomBureaucrat", 1);
+
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		std::cout << "\n-- Testing newly created form --" << std::endl;
 		std::cout << *rrf << std::endl;
