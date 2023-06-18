@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/03 16:06:05 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/18 23:26:26 by anoukmechai      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Base * generate(void)
 	return (base);
 }
 
-void identify(Base* p)
+void identify(Base* p) // this function should check if the cast return is NULL
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "Type of the object as pointer : A | ";
@@ -42,12 +42,12 @@ void identify(Base* p)
 		std::cout << "Type of the object as pointer : Unknown | ";
 }
 
-void identify(Base& p)
+void identify(Base& p) // mandatory to use exception here ? 
 {
 	char letter;
 	try
 	{
-		(void)dynamic_cast<A&>(p);
+		(void)dynamic_cast<A&>(p); // try to remove void
 		letter = 'A';
 	}
 	catch (std::exception & e) {}

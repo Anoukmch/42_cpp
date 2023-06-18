@@ -83,7 +83,7 @@ bool hasDuplicate(const std::string& input, char targetChar)
 bool ScalarConverter::isOnlyDigits(std::string const& input) {
 	if ((input[0] == '+' || input[0] == '-') && !std::isdigit(input[1]))
 			return (false);
-    for (size_t i = 0; i < input.length(); ++i) // Check why i = 0 with ++i
+    for (size_t i = 0; i < input.length(); ++i)
 	{
         if (!std::isdigit(input[i]) && input[i] != 'f' && input[i] != '.')
             return (false);
@@ -110,6 +110,8 @@ void ScalarConverter::convert(std::string const& input) // Store non-sense value
 		_char = static_cast<char>(_float);
 		_int = static_cast<int>(_float);
 		_double = static_cast<double>(_float);
+		std::cout << "char : " << _char << std::endl;
+		std::cout << "int : " << _int << std::endl;
 
 	}
 	else if (input.find('.') != std::string::npos && isOnlyDigits(input)
