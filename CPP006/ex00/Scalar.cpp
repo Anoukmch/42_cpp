@@ -5,7 +5,7 @@ int ScalarConverter::_int = 0;
 float ScalarConverter::_float = 0;
 double ScalarConverter::_double = 0;
 
-ScalarConverter::ScalarConverter() {} // Check the constructor : should they be empty ?
+ScalarConverter::ScalarConverter() {}
 
 ScalarConverter::ScalarConverter( ScalarConverter const & src) {
 	*this = src;
@@ -16,13 +16,8 @@ ScalarConverter::~ScalarConverter( void ) {
 }
 
 // Operator overload
-ScalarConverter & ScalarConverter::operator=( ScalarConverter const & src) { // Check : probably delete it all
-	if ( this != &src ) {
-		_char = src._char;
-		_int = src._int;
-		_float = src._float;
-		_double = src._double;
-	}
+ScalarConverter & ScalarConverter::operator=( ScalarConverter const & src) {
+	if ( this != &src ) { ; }
 	return ( *this );
 }
 
@@ -81,9 +76,12 @@ bool hasDuplicate(const std::string& input, char targetChar)
 }
 
 bool ScalarConverter::isOnlyDigits(std::string const& input) {
-	if ((input[0] == '+' || input[0] == '-') && !std::isdigit(input[1]))
-			return (false);
-    for (size_t i = 0; i < input.length(); ++i)
+	size_t init = 0;
+	if ((input[0] == '+' || input[0] == '-'))
+		init = 1;
+	if (!std::isdigit(input[1]))
+		return (false);
+    for (size_t i = init ; i < input.length(); ++i)
 	{
         if (!std::isdigit(input[i]) && input[i] != 'f' && input[i] != '.')
             return (false);
@@ -93,7 +91,7 @@ bool ScalarConverter::isOnlyDigits(std::string const& input) {
     return (true);
 }
 
-void ScalarConverter::convert(std::string const& input) // Store non-sense value in char and int ? Don't make sense
+void ScalarConverter::convert(std::string const& input)
 {
 	if (isImpossible(input))
 		return ;
@@ -110,9 +108,6 @@ void ScalarConverter::convert(std::string const& input) // Store non-sense value
 		_char = static_cast<char>(_float);
 		_int = static_cast<int>(_float);
 		_double = static_cast<double>(_float);
-		std::cout << "char : " << _char << std::endl;
-		std::cout << "int : " << _int << std::endl;
-
 	}
 	else if (input.find('.') != std::string::npos && isOnlyDigits(input)
 		&& input.find('f') == std::string::npos)
@@ -130,7 +125,10 @@ void ScalarConverter::convert(std::string const& input) // Store non-sense value
 		_double = static_cast<double>(_int);
 	}
 	else
+	{
+		std::cout << "test1" << std::endl;
 		throw std::exception();
+	}
 }
 
 void ScalarConverter::printer(void)
@@ -138,7 +136,6 @@ void ScalarConverter::printer(void)
 	std::cout << "char : ";
 	if ( _int > CHAR_MAX || _int < CHAR_MIN
 		|| _float > CHAR_MAX || _float < CHAR_MIN
-		|| _double > CHAR_MAX || _double < CHAR_MIN
 		|| isnan(_float))
 		std::cout << "impossible" << std::endl;
 	else if (!std::isprint(_int))
@@ -148,7 +145,6 @@ void ScalarConverter::printer(void)
 
 	std::cout << "int : ";
 	if ( _float > INT_MAX || _float < INT_MIN
-		|| _double > INT_MAX || _double < INT_MIN
 		|| isnan(_float))
 		std::cout << "impossible" << std::endl;
 	else

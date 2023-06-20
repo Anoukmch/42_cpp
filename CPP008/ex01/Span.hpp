@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:44:48 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/08 18:28:34 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:55:56 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MUTANTSTACK_H
-#define MUTANTSTACK_H
+#ifndef SPAN_H
+#define SPAN_H
 
 # include <iostream>
 # include <iomanip>
 # include <string>
-# include <stack>
+# include <vector>
+# include <algorithm>
+# include <numeric>
 
-// Typename ?
-// Try to create a class template with two arg and to send only one
-
-template <typename T, typename C> // Template < typename T, typename C = std::deque<T> > by default
-class MutantStack : public std::stack<T,C> // Try public std::vector<int>
+class Span
 {
-	// Need to define iterator to be able to create :
-	std::stack<int>::iterator test;
+	public :
+		Span();
+		Span(unsigned int N);
+		Span( Span const & src);
+		Span &operator=( Span const & src);
+		~Span( void );
 
-	iterator begin();
+		void addNumber(int const& value);
+		int shortestSpan();
+		int longestSpan();
+		void fillSpan(std::vector<int>::iterator range_beg, std::vector<int>::iterator range_end);
+		std::vector<int> const& getTable(void) const;
+
+	private :
+		std::vector<int> _table;
+		unsigned int _n;
 };
 
-// Faire des recherches : typedef in a class
+std::ostream &operator<<( std::ostream &flux, Span const& var );
 
 #endif

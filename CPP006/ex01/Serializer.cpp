@@ -7,7 +7,7 @@ Serializer::Serializer( Serializer const & src) {
 }
 
 // Destructors
-Serializer::~Serializer( void ) {
+Serializer::~Serializer() {
 }
 
 // Operator overload

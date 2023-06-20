@@ -19,6 +19,8 @@ class Array
 
 		Array(unsigned int n) : _size(n)
 		{
+			std::cout << "n : " << n << std::endl;
+			std::cout << "_size : " << _size << std::endl;
 			if (_size < 0 || _size > INT_MAX)
 				throw std::exception();
 			std::cout << "Overload constructor called" << std::endl;
@@ -34,35 +36,32 @@ class Array
 		}
 
 		~Array(void)
-		{
-			std::cout << "Destructor called" << std::endl;
-			delete[] _array;
-		}
+		{ delete[] _array;}
 
 		Array &operator=(Array const & src)
 		{
-			std::cout << "Operator = called" << std::endl;
+			std::cout << "Operator= called" << std::endl;
 			if ( this != &src )
 			{
 				_size = src.size();
-				if (_array != NULL) //Test to send an array != NULL
+				if (_array != NULL)
 					delete[]_array;
-				_array = new T[_size]; // Try that (every obj are different or the same?) Try : _array = new Brain(*src._array)[_size];
+				_array = new T[_size];
 				std::cout << "Array has now " << _size << " empty spaces." << std::endl;
 				for (int i = 0; i < _size ; i++)
-					_array[i] = src._array[i]; // What if class doesn't have = operator ? // _array[i] = src[i]; --> would it work ? // new (&_array[i]) T(src._array); <- this line is ok ?
+					_array[i] = src._array[i];
 			}
 			return ( *this );
 		}
 
-		T& operator[] (int index)
+		T& operator[] (unsigned int index)
 		{
 			if (index < 0 || index >= _size)
 				throw std::exception();
 			return (_array[index]);
 		}
 
-		const T& operator[] (int index)
+		const T& operator[] (unsigned int index) const
 		{
 			if (index < 0 || index >= _size)
 				throw std::exception();
@@ -73,7 +72,7 @@ class Array
 
 	private :
 		T * _array;
-		int _size;
+		unsigned int _size;
 
 };
 

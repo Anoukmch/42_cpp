@@ -6,36 +6,27 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/08 18:05:03 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:38:47 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "MutantStack.hpp"
+#include "Span.hpp"
 
-# include <iostream>
-# include <stack>
-# include <list>
+int main( void )
+{
+	Span span = Span(5);
 
-int main( void ) {
+	std::cout << "Creating span..." << std::endl;
+	span.addNumber(6);
+	span.addNumber(3);
+	span.addNumber(17);
+	span.addNumber(9);
+	span.addNumber(11);
 
-	std::list<int> l;
-	std::list<int>::iterator it;
+	std::cout << "Printing span..." << std::endl;
+	std::cout << span << std::endl;
 
-	for (it = l.begin(); it != l.end(); it++)
-		std::cout << *it << std::endl;
-
-	std::stack<int> s; // = MutantStack<int> m;
-	std::stack<int>::iterator test; // = MutantStack<int>::iterator test2;
-
-
-	// for (test = s.begin(); test != s.end(); test++)
-	// 	std::cout << *test << std::endl;
+	std::cout << "Shortest span : " << span.shortestSpan() << std::endl;
+	std::cout << "Longest span : " << span.longestSpan() << std::endl;
 
 }
-
-// std::stack<int> s , means create an object.
-// It's a stack full of int. By default a deque, since we did not precise C.
-// I cannot call begin() and end() on this object. Unlike vector, list, deque...
-
-// std::stack<int>::iterator test , is like Form::NotFound.
-// iterator is a class. 

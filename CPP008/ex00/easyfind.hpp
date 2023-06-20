@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 13:55:00 by amechain          #+#    #+#             */
-/*   Updated: 2023/04/07 16:45:38 by amechain         ###   ########.fr       */
+/*   Created: 2023/06/01 17:41:51 by amechain          #+#    #+#             */
+/*   Updated: 2023/06/20 18:05:36 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_H
-#define CAT_H
+#ifndef EASY_FIND_H
+#define EASY_FIND_H
 
-#include "Animal.hpp"
-# include "Brain.hpp"
 # include <iostream>
+# include <iomanip>
+# include <string>
+# include <list>
+# include <deque>
+# include <vector>
+# include <algorithm>
 
-class Cat : public Animal
+
+template <typename T>
+typename T::iterator easyfind(T const& a, int const i)
 {
-	public :
-		Cat();
-		Cat( Cat const & src);
-		Cat &operator=( Cat const & src);
-		virtual ~Cat();
+	typename T::iterator it;
 
-		virtual void makeSound() const;
-		void setIdea(int i, std::string const& idea);
-		std::string const& getIdea(int index) const;
-
-		private :
-			Brain *	_brain;
-};
+	it = std::find(a.begin(), a.end(), i);
+	if (it == a.end())
+		throw (std::out_of_range("Fail : occurence was not found"));
+	return (it);
+}
 
 #endif
 

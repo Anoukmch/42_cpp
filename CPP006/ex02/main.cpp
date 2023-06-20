@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/18 23:26:26 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/19 12:32:53 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Base * generate(void)
 	return (base);
 }
 
-void identify(Base* p) // this function should check if the cast return is NULL
+void identify(Base* p)
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "Type of the object as pointer : A | ";
@@ -42,12 +42,12 @@ void identify(Base* p) // this function should check if the cast return is NULL
 		std::cout << "Type of the object as pointer : Unknown | ";
 }
 
-void identify(Base& p) // mandatory to use exception here ? 
+void identify(Base& p)
 {
 	char letter;
 	try
 	{
-		(void)dynamic_cast<A&>(p); // try to remove void
+		(void)dynamic_cast<A&>(p);
 		letter = 'A';
 	}
 	catch (std::exception & e) {}
@@ -68,7 +68,7 @@ void identify(Base& p) // mandatory to use exception here ?
 			letter = 'C';
 		}
 	}
-	catch (std::exception & e) { }
+	catch (std::exception & e) {}
 	if (letter)
 		std::cout << "Type of the object as reference : " << letter << std::endl;
 	else
@@ -88,5 +88,4 @@ int	main()
 		identify(*p);
 		delete (p);
 	}
-
 }

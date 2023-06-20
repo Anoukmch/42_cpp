@@ -6,14 +6,11 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 17:38:28 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/06/09 09:57:32 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:05:40 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
-
-// Check eval sheet for main() testing.
-// What if the iterator is const ?
 
 int main(void)
 {
@@ -37,11 +34,11 @@ int main(void)
 	d.push_back(9);
 
 	std::list<int>::iterator it_l;
-	std::vector<int>::iterator it_v; //try <char>
+	std::vector<int>::iterator it_v;
 	std::deque<int>::iterator it_d;
 
 	std::cout << "-- Printing the containers --" << std::endl;
-	for (it_l = l.begin(); it_l != l.end(); it_l++) //ou ++it_l
+	for (it_l = l.begin(); it_l != l.end(); it_l++)
 		std::cout << "list : ["<< *it_l << "]" << std::endl;
 	for (it_v = v.begin(); it_v != v.end(); it_v++)
 		std::cout << "vector : ["<< *it_l << "]" << std::endl;

@@ -6,7 +6,7 @@ CC		= c++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
 # Files
-SRCS	= main.cpp Cat.cpp Brain.cpp Animal.cpp
+SRCS	= main.cpp
 OBJS	= $(SRCS:.cpp=.o)
 INC		= -I ./
 

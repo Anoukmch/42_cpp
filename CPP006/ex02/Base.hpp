@@ -8,9 +8,3 @@ class Base {
 };
 
 #endif
-
-// Dynamic cast can only be applied
-// to a class with one virtual function.
-// Try without.
-
-// what is header <typeinfo>

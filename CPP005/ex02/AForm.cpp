@@ -72,8 +72,6 @@ void	AForm::beSigned(Bureaucrat const& obj) {
 }
 
 void AForm::execute(Bureaucrat const & executor) const {
-	std::cout << "test : " << _gradeExe << std::endl;
-	std::cout << "test : " << _gradeSign << std::endl;
 	if (executor.getGrade() > _gradeExe)
 		throw GradeTooLowException();
 	else if (this->_isSigned == false )
