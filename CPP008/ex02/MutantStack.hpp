@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:44:48 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/20 17:51:32 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/21 12:44:57 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@
 # include <string>
 # include <stack>
 
-// Typename ?
-// Try to create a class template with two arg and to send only one
-
 template <typename T, typename C = std::deque<T> >
-class MutantStack : public std::stack<T,C> // Try public std::vector<int> to see if inheritance possible
+class MutantStack : public std::stack<T,C>
 {
 	public :
 

@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 14:23:23 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/20 18:02:02 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:06:06 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ int main()
 	MutantStack<float>::iterator it_test;
 	for(it_test = test.begin(); it_test != test.end(); it_test++)
 		std::cout <<  *it_test << std::endl;
-
 	return 0;
 }

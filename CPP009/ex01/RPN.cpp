@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:00:11 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/16 21:46:12 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/21 16:44:31 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,38 +46,39 @@ bool RPN::isValidExpression(const std::string& input) {
         if (validChars.find(input[i]) == std::string::npos)
            throw std::logic_error("Wrong input format");
 		else if (std::isdigit(input[i]) && std::isdigit(input[i + 1]))
-			 throw std::logic_error("Operands must be digit");
+			 throw std::logic_error("Operands must be one digit");
     }
     return true;
 }
 
-// FOR TESTING PURPOSE
-/* void RPN::printStack(std::stack<int> stk) {
-    while (!stk.empty()) {
-        std::cout << stk.top() << ' ';
-        stk.pop();
+void RPN::printStack(std::stack<int> stack, char c) {
+	std::cout << c << "\t| ";
+    while (!stack.empty()) {
+    	std::cout << stack.top() << ' ';
+        stack.pop();
     }
     std::cout << std::endl;
-} */
+}
 
 void RPN::calculator(void)
 {
-	// try with std::istringstream iss(_expr);
-	// int value
-	// iss >> value
-	for (unsigned long i = 0 ; i < _expr.size() ; i++) // or iterator ?
+	std::cout << "Oper. :\t| Stack :" << std::endl;
+	for (unsigned long i = 0 ; i < _expr.size() ; i++)
 	{
 		if (_expr[i] == ' ')
 			;
  		else if (std::isdigit(_expr[i]))
+		{
 			_stack.push(_expr[i] - '0');
+			printStack(_stack, _expr[i]);
+		}
 		else
 		{
 			if (_stack.size() < 2)
 				throw std::logic_error("Wrong input format");
 
 			int result;
-			int operand2 = _stack.top(); // how to avoid having 2 integers variable ?
+			int operand2 = _stack.top();
 			_stack.pop();
 			int operand1 = _stack.top();
 			_stack.pop();
@@ -91,6 +92,7 @@ void RPN::calculator(void)
 			if (_expr[i] == '*')
 				result = operand1 * operand2;
 			_stack.push(result);
+			printStack(_stack, _expr[i]);
 		}
 	}
 }

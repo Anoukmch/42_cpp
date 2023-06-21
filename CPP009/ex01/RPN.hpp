@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:58:18 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/16 12:36:34 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/21 15:47:49 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RPN
 
 		void calculator(void);
 		bool isValidExpression(const std::string& input);
-		//void printStack(std::stack<int> stk);
+		void printStack(std::stack<int> stack, char c);
 		std::stack<int> const& getStack(void) const;
 
 	private :

@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:44:48 by amechain          #+#    #+#             */
-/*   Updated: 2023/06/20 18:55:56 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/21 12:16:48 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,21 @@ class Span
 		void addNumber(int const& value);
 		int shortestSpan();
 		int longestSpan();
-		void fillSpan(std::vector<int>::iterator range_beg, std::vector<int>::iterator range_end);
 		std::vector<int> const& getTable(void) const;
+
+		template <typename T>
+		void fillSpan(typename T::iterator range_beg, typename T::iterator range_end)
+		{
+			unsigned int	dist  = std::abs(std::distance(range_beg, range_end));
+
+			if (_table.size() + dist > _n)
+				throw std::logic_error("Error : Span is too small to insert range");
+			else
+			{
+				for (typename T::iterator it = range_beg ; it != range_end ; it++)
+					_table.push_back(*it);
+			}
+		}
 
 	private :
 		std::vector<int> _table;

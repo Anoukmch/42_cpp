@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 17:38:28 by mcombeau          #+#    #+#             */
-/*   Updated: 2023/06/20 18:05:40 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/21 14:18:18 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(void)
 	for (it_l = l.begin(); it_l != l.end(); it_l++)
 		std::cout << "list : ["<< *it_l << "]" << std::endl;
 	for (it_v = v.begin(); it_v != v.end(); it_v++)
-		std::cout << "vector : ["<< *it_l << "]" << std::endl;
+		std::cout << "vector : ["<< *it_v << "]" << std::endl;
 	for (it_d = d.begin(); it_d != d.end(); it_d++)
 		std::cout << "dector : ["<< *it_d << "]" << std::endl;
 

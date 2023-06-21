@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:58:18 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/17 20:30:36 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/21 19:48:36 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,23 @@ class PmergeMe
 		unsigned int isValidExpression(std::string const & number);
 		void printer(void);
 		void sort(void);
-		std::vector< std::pair<unsigned int, unsigned int> > create_pairs(void);
+		void create_pairs(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
 		void swap_pairs(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
-		//void sort_seq(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
+		void sort_seq(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
 		bool hasDuplicates(void);
+		void make_main_and_pend(std::vector< std::pair<unsigned int, unsigned int> > & pairsVector);
 		// Remove this function from class. Object do not need to use them
+
+		template <typename T>
+		static void	swap(T &a, T &b)
+		{
+			T buf;
+
+			buf = a;
+			a = b;
+			b = buf;
+		}
+
 	private :
 		std::vector<unsigned int> _vector;
 		int _odd;
