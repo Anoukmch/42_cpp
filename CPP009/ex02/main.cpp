@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:55:59 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/17 21:21:54 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/22 23:49:05 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int main(int ac, char** ag)
 {
 	if (ac < 3)
 	{
-		std::cout << "Program requires at least 2 arguments" << std::endl;
+		std::cout << "Program requires at least 2 arguments in a sequence" << std::endl;
 		return (1);
 	}
 	try
 	{
 		PmergeMe pmergeme(ac, ag);
-		pmergeme.sort();
+		pmergeme.sort_menu();
 
     }
 	catch(std::exception const& e)
