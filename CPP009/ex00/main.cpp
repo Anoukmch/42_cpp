@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:55:59 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/15 21:56:17 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/23 12:46:56 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
-// Je ne comprends pas bien l'ambivalence entre main et classe. 
-// Ici je ne sais pas quelles fonctions vont dans la classe ou dans le main.
 
 int main(int ac, char** ag)
 {

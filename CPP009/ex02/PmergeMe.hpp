@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:58:18 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/23 00:06:05 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:48:51 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 class PmergeMe
 {
 	public :
-		PmergeMe();
 		PmergeMe(int ac, char** ag);
 		PmergeMe( PmergeMe const & src);
 		PmergeMe &operator=( PmergeMe const & src);
@@ -70,6 +69,8 @@ class PmergeMe
 		std::deque<unsigned int> _deque;
 		std::vector<unsigned int> _jacobSeq;
 		int _odd;
+
+		PmergeMe();
 };
 
 std::ostream &operator<<( std::ostream &flux, PmergeMe const& var);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anoukmechain <anoukmechain@student.42.f    +#+  +:+       +#+        */
+/*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:58:18 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/15 21:48:37 by anoukmechai      ###   ########.fr       */
+/*   Updated: 2023/06/23 12:59:30 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <string>
 #include <sys/stat.h>
 #include <sstream>
+#include <fstream>
 
 class BitcoinExchange
 {
@@ -28,12 +29,11 @@ class BitcoinExchange
 		BitcoinExchange &operator=( BitcoinExchange const & src);
 		~BitcoinExchange( void );
 
-		std::ifstream openFile(std::string filename);
-		void parseLine (std::ifstream infile, char flag);
+		std::ifstream* openFile(std::string filename);
+		void parseLine(std::ifstream *infile, char flag);
 		bool checkDate(std::string date);
 		float checkValue(std::string valueStr, char flag);
 		int getNumberOfDigits(int number);
-		void fillDataBase(std::ifstream dataBaseFile);
 		void checkGeneralFormat(std::string line, char flag);
 		void findMatch(std::pair<std::string, float> pair);
 

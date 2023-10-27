@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 14:00:11 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/21 16:44:31 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/23 14:39:24 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool RPN::isValidExpression(const std::string& input) {
 }
 
 void RPN::printStack(std::stack<int> stack, char c) {
-	std::cout << c << "\t| ";
+	std::cout << "Oper. :\t" << c << "\t| Stack :\t";
     while (!stack.empty()) {
     	std::cout << stack.top() << ' ';
         stack.pop();
@@ -62,7 +62,6 @@ void RPN::printStack(std::stack<int> stack, char c) {
 
 void RPN::calculator(void)
 {
-	std::cout << "Oper. :\t| Stack :" << std::endl;
 	for (unsigned long i = 0 ; i < _expr.size() ; i++)
 	{
 		if (_expr[i] == ' ')
@@ -95,6 +94,8 @@ void RPN::calculator(void)
 			printStack(_stack, _expr[i]);
 		}
 	}
+	if (_stack.size() != 1)
+		throw std::logic_error("Wrong input format");
 }
 
 std::ostream &operator<<( std::ostream &flux, RPN const& var) {

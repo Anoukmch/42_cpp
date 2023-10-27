@@ -14,10 +14,10 @@
 
 unsigned int isValidExpression(std::string const & number);
 
-PmergeMe::PmergeMe() {
+PmergeMe::PmergeMe() : _odd(-1), _vector(), _deque(), _jacobSeq() {
 }
 
-PmergeMe::PmergeMe(int ac, char** ag) : _odd(-1)
+PmergeMe::PmergeMe(int ac, char** ag) : _odd(-1), _jacobSeq()
 {
 	unsigned int nbr;
 	for (int i = 1; i < ac; ++i)
@@ -189,7 +189,7 @@ void rec_insert(std::vector< std::pair<unsigned int, unsigned int> > & pairsVect
 	}
 }
 
-int PmergeMe::bisect_vec(unsigned int x ) // change and understand this
+int PmergeMe::bisect_vec(unsigned int x )
 {
 	int lo = 0;
 	int hi = _vector.size();
@@ -239,7 +239,7 @@ void PmergeMe::make_main_and_pend(std::vector< std::pair<unsigned int, unsigned 
 
 void PmergeMe::create_jac_seq(std::vector<unsigned int> & pend)
 {
-	int index = 3; // why does it need to start at 3 ?
+	int index = 3;
 	int pend_size = pend.size();
 
 	while(jacobsthal(index) < pend_size - 1)
@@ -282,7 +282,7 @@ void PmergeMe::insert_pend(std::vector<unsigned int> & pend, std::vector<unsigne
 		int index = bisect_vec( item );
 		_vector.insert(_vector.begin() + index, item);
 	}
-	if (_odd > 0)
+	if (_odd >= 0)
 	{
 		int index = bisect_vec( _odd );
 		_vector.insert(_vector.begin() + index, _odd);
@@ -337,7 +337,7 @@ void rec_insert(std::deque< std::pair<unsigned int, unsigned int> > & pairsDeque
 	}
 }
 
-int PmergeMe::bisect_deq(unsigned int x ) // change and understand this
+int PmergeMe::bisect_deq(unsigned int x )
 {
 	int lo = 0;
 	int hi = _deque.size();
@@ -357,10 +357,6 @@ void PmergeMe::create_pairs(std::deque< std::pair<unsigned int, unsigned int> > 
 {
 	for (std::deque<unsigned int>::iterator it = _deque.begin(); it != _deque.end(); it+=2)
 		pairsDeque.push_back(std::make_pair(*it, *(it + 1)));
-
-	// std::cout << "create pairs : " << std::endl;
-	// for (std::deque< std::pair<unsigned int, unsigned int> >::iterator it = pairsDeque.begin(); it != pairsDeque.end(); ++it)
-	// 	std::cout << (*it).first  << " - " << (*it).second << std::endl;
 }
 
 void PmergeMe::swap_pairs(std::deque< std::pair<unsigned int, unsigned int> > & pairsDeque)
@@ -370,21 +366,15 @@ void PmergeMe::swap_pairs(std::deque< std::pair<unsigned int, unsigned int> > & 
 		if (it->first < it->second)
 			swap(it->first, it->second);
 	}
-	// std::cout << "swap pairs : " << std::endl;
-	// for (std::deque< std::pair<unsigned int, unsigned int> >::iterator it = pairsDeque.begin(); it != pairsDeque.end(); ++it)
-	// 	std::cout << (*it).first  << " - " << (*it).second << std::endl;
 }
 
 void PmergeMe::sort_seq(std::deque< std::pair<unsigned int, unsigned int> > & pairsDeque)
 {
 	int n = pairsDeque.size();
 	rec_insert(pairsDeque, n);
-	// std::cout << "sort seq : " << std::endl;
-	// for (std::deque< std::pair<unsigned int, unsigned int> >::iterator it = pairsDeque.begin(); it != pairsDeque.end(); ++it)
-	// 	std::cout << (*it).first  << " - " << (*it).second << std::endl;
 }
 
-void PmergeMe::make_main_and_pend(std::deque< std::pair<unsigned int, unsigned int> > & pairsDeque, std::deque<unsigned int> & pend) // TEST THIS
+void PmergeMe::make_main_and_pend(std::deque< std::pair<unsigned int, unsigned int> > & pairsDeque, std::deque<unsigned int> & pend)
 {
 	for (std::deque< std::pair<unsigned int, unsigned int> >::iterator it = pairsDeque.begin(); it != pairsDeque.end(); it++)
 		_deque.push_back((*it).first);
@@ -393,19 +383,11 @@ void PmergeMe::make_main_and_pend(std::deque< std::pair<unsigned int, unsigned i
 		pend.push_back((*it).second);
 
 	pairsDeque.clear();
-
-	// std::cout << "make main : " << std::endl;
-	// for (std::deque<unsigned int>::iterator it = _deque.begin(); it != _deque.end(); ++it)
-	// 	std::cout << (*it) << std::endl;
-
-	// 	std::cout << "make pend : " << std::endl;
-	// for (std::deque<unsigned int>::iterator it = pend.begin(); it != pend.end(); ++it)
-	// 	std::cout << (*it)  << std::endl;
 }
 
 void PmergeMe::create_jac_seq(std::deque<unsigned int> & pend)
 {
-	int index = 3; // why does it need to start at 3 ?
+	int index = 3;
 	int pend_size = pend.size();
 
 	while(jacobsthal(index) < pend_size - 1)
@@ -438,9 +420,6 @@ void PmergeMe::create_full_insert_sec(std::deque<unsigned int> & pend, std::dequ
 		}
 		i++;
 	}
-	// std::cout << "create full seq : " << std::endl;
-	// for (std::deque< unsigned int>::iterator it = indexSequence.begin(); it != indexSequence.end(); ++it)
-	// 	std::cout << (*it)  << std::endl;
 }
 
 void PmergeMe::insert_pend(std::deque<unsigned int> & pend, std::deque<unsigned int> & indexSequence)
@@ -451,14 +430,11 @@ void PmergeMe::insert_pend(std::deque<unsigned int> & pend, std::deque<unsigned 
 		int index = bisect_deq( item );
 		_deque.insert(_deque.begin() + index, item);
 	}
-	if (_odd > 0)
+	if (_odd >= 0)
 	{
 		int index = bisect_deq( _odd );
 		_deque.insert(_deque.begin() + index, _odd);
 	}
-	// std::cout << "final : " << std::endl;
-	// for (std::deque< unsigned int>::iterator it = _deque.begin(); it != _deque.end(); ++it)
-	// 	std::cout << (*it)  << std::endl;
 }
 
 

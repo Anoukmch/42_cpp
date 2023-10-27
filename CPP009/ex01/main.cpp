@@ -6,7 +6,7 @@
 /*   By: amechain <amechain@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 13:55:59 by anoukmechai       #+#    #+#             */
-/*   Updated: 2023/06/21 15:57:51 by amechain         ###   ########.fr       */
+/*   Updated: 2023/06/23 14:18:44 by amechain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char** ag)
 	}
 	try
 	{
-		RPN rpn(ag[1]); // NEGATIVE NUMBER
+		RPN rpn(ag[1]);
 		rpn.calculator();
 		std::cout << rpn << std::endl;
 	}
